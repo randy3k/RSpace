@@ -14,8 +14,6 @@
 
 + (Engine*) R;
 
-- (void) doEvents;
-
 - (void) activate;
 
 - (void) run_repl;

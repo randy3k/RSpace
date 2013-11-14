@@ -12,8 +12,6 @@
 
 @implementation RSpace
 
-NSCondition* cocoaCondition;
-NSString* commandQueue;
 unsigned long committedLength=0;
 
 @synthesize progressIndicator;
@@ -24,6 +22,7 @@ unsigned long committedLength=0;
 -(id) init
 {
     self = [super init];
+
     
     cocoaCondition = [[NSCondition alloc] init];
     
@@ -44,7 +43,8 @@ unsigned long committedLength=0;
 - (void)handleQuartzWillClose:(NSNotification*) aNotification
 {
     NSWindow* w = [aNotification object];
-
+    NSLog(@"windows class is %@", [(NSObject*)[w delegate] className]);
+    
     if (w && [[(NSObject*)[w delegate] className] isEqualToString:@"QuartzCocoaView"]){
         [w setReleasedWhenClosed:NO];
     }
@@ -63,11 +63,15 @@ unsigned long committedLength=0;
 -(void)awakeFromNib
 {
     NSLog(@"awakeFromNib");
+
 }
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    
+    //    change close button to dotted button
+    [consoleWindow setDocumentEdited: YES];
     
     [[Engine R] setConsole: self];
     [[Engine R] activate];
@@ -81,9 +85,52 @@ unsigned long committedLength=0;
 
 }
 
+
+BOOL terminating = NO;
+
+- (BOOL)windowShouldClose:(id)sender{
+    
+    if (terminating) return YES;
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:NLS(@"Close")];
+    [alert addButtonWithTitle:NLS(@"Cancel")];
+
+    [alert setInformativeText:NLS(@"All data will be lost!")];
+    [alert setMessageText:NLS(@"Do you want to close RSpace?")];
+    
+    [alert beginSheetModalForWindow:[consoleTextView window]
+                      modalDelegate:self
+                     didEndSelector:@selector(shouldCloseDidEnd:returnCode:contextInfo:)
+                        contextInfo:nil];
+    return NO;
+}
+
+- (void) shouldCloseDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo{
+
+    if (returnCode==NSAlertFirstButtonReturn){
+        terminating = YES;
+        [[NSApplication sharedApplication] terminate:self];
+    }
+}
+
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *) app {
+    
+	if (![self windowShouldClose:self]) {
+		return NSTerminateCancel;
+	}
+    return NSTerminateNow;
+}
+
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
 }
+
+
+NSCondition* cocoaCondition;
+NSString* commandQueue;
 
 - (void) consoleInput: (NSString*) str
 {

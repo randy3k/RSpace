@@ -13,6 +13,15 @@
 #include <Rinterface.h>
 #include "RSpace.h"
 
+void doEvents(){
+    NSEvent * event;
+    do
+    {
+        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
+        [NSApp sendEvent: event];
+    }
+    while(event != nil);
+}
 
 
 void writeText(NSString* s, int oType){
@@ -74,7 +83,7 @@ int R_ReadConsole(const char *prompt, unsigned char *buf, int len, int addtohist
 
 void R_WriteConsoleEx(const char *buf, int len, int oType){
 	NSString *s = nil;
-    NSLog(@"R output is %s", buf);
+//    NSLog(@"R output is %s", buf);
 	s = [[NSString alloc] initWithUTF8String:buf];
     if (!s) s = [[NSString alloc] initWithCString:buf encoding:NSASCIIStringEncoding];
     if (s) {
@@ -93,18 +102,6 @@ static Engine* R = nil;
     if (R==nil)
         R=[[Engine alloc] init];
     return R;
-}
-
-
-- (void) doEvents
-{
-    NSEvent * event;
-    do
-    {
-        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
-        [NSApp sendEvent: event];
-    }
-    while(event != nil);
 }
 
 - (void) activate
@@ -135,7 +132,7 @@ static Engine* R = nil;
     R_CStackLimit = -1;
     
     // do all NSEvents before running repl
-    [self doEvents];
+    doEvents();
 }
 
 
@@ -146,7 +143,7 @@ static Engine* R = nil;
     R_ReplDLLinit();
     
     while (R_ReplDLLdo1() > 0) {
-        [self doEvents];
+//        doEvents();
     }
     
     NSLog(@"Finished");
