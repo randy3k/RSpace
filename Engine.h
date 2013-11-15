@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Randy Lai. All rights reserved.
 //
 
-void doEvents();
-
 @class RSpaceWindowController;
 
 @interface Engine : NSObject

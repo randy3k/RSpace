@@ -13,33 +13,38 @@
 #include <Rinterface.h>
 #include "RSpaceWindowController.h"
 
-void doEvents(){
-    NSEvent * event;
-    do
-    {
-        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
-        [NSApp sendEvent: event];
-    }
-    while(event != nil);
-}
 
-
+// count is used to make writing smooth
+int count=0;
+BOOL waitUntilDone=NO;
 void writeText(NSString* s, int oType){
-// change color here
+
+    if (count == 1000){
+        count = 0;
+        waitUntilDone=YES;
+    }
     
-//    perform on mainthread for fast response
+//    perform on mainthread for thread safty
     [[[Engine R] console] performSelectorOnMainThread:@selector(writeText:)
-                                           withObject: @[s] waitUntilDone:YES];
-//    [[[Engine R] console] writeText: @[s] ];
+                                           withObject: @[s] waitUntilDone:waitUntilDone];
+    
+    count++;
+    waitUntilDone=NO;
 }
 
 void writeInput(NSString* s, int oType){
     // change color here
     
-    //    perform on mainthread for fast response
+    if (count == 1000){
+        count = 0;
+        waitUntilDone=YES;
+    }
+    
+    //    perform on mainthread for thread safty
     [[[Engine R] console] performSelectorOnMainThread:@selector(writeInput:)
-                                           withObject: @[s] waitUntilDone:YES];
-    //    [[[Engine R] console] writeInput: @[s] ];
+                                           withObject: @[s] waitUntilDone:waitUntilDone];
+    count++;
+    waitUntilDone=NO;
 }
 
 char* commandBuffer=0;
@@ -56,6 +61,7 @@ int R_ReadConsole(const char *prompt, unsigned char *buf, int len, int addtohist
         commandBuffer = (char*)[str UTF8String];
     }
     NSLog(@"commandBuffer len=%lu", strlen(commandBuffer));
+    
 //    get a compelete line
     c = commandBuffer;
     while (*c && *c!='\n' && *c!='\r') c++;
@@ -124,6 +130,7 @@ static Engine* R = nil;
 
     R_Outputfile = NULL;
     R_Consolefile = NULL;
+    R_Interactive = 1;
     ptr_R_ReadConsole =  R_ReadConsole;
     ptr_R_WriteConsole = NULL;
     ptr_R_WriteConsoleEx = R_WriteConsoleEx;
@@ -131,8 +138,14 @@ static Engine* R = nil;
     // disable stack limit checking
     R_CStackLimit = -1;
     
-    // do all NSEvents before running repl
-    doEvents();
+   // do all NSEvents before running repl
+    NSEvent * event;
+    do
+    {
+        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
+        [NSApp sendEvent: event];
+    }
+    while(event != nil);
 }
 
 
@@ -143,7 +156,6 @@ static Engine* R = nil;
     R_ReplDLLinit();
     
     while (R_ReplDLLdo1() > 0) {
-        doEvents();
     }
     
     NSLog(@"Finished");
