@@ -143,7 +143,7 @@ static Engine* R = nil;
     R_ReplDLLinit();
     
     while (R_ReplDLLdo1() > 0) {
-//        doEvents();
+        doEvents();
     }
     
     NSLog(@"Finished");

@@ -11,23 +11,21 @@
 
 @implementation RSpaceWindowController
 
+NSCondition* cocoaCondition;
+NSString* commandQueue;
 unsigned long committedLength=0;
 BOOL terminating = NO;
+
 @synthesize consoleWindow;
 @synthesize progressIndicator;
 @synthesize consoleTextView;
-
-
-- (id) init{
-    self = [super init];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleQuartzWillClose:) name:NSWindowWillCloseNotification object:nil];
-
-    cocoaCondition = [[NSCondition alloc] init];
-    return self;
-}
+@synthesize interrupt;
 
 - (void) windowDidLoad{
+    
+//    [consoleWindow setDocumentEdited: YES];
+
+    cocoaCondition = [[NSCondition alloc] init];
     
     [[Engine R] setConsole: self];
     [[Engine R] activate];
@@ -39,17 +37,6 @@ BOOL terminating = NO;
     [thread start];
 }
 
-// do not release the quartz window, as the instance will be released in main R code
-- (void)handleQuartzWillClose:(NSNotification*) aNotification
-{
-    NSWindow* w = [aNotification object];
-    NSLog(@"windows class is %@", [(NSObject*)[w delegate] className]);
-    
-    if (w && [[(NSObject*)[w delegate] className] isEqualToString:@"QuartzCocoaView"]){
-        [w setReleasedWhenClosed:NO];
-    }
-    
-}
 
 
 - (void) shouldCloseDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo{
@@ -82,9 +69,6 @@ BOOL terminating = NO;
 }
 
 
-NSCondition* cocoaCondition;
-NSString* commandQueue;
-
 - (void) consoleInput: (NSString*) str
 {
     if (commandQueue != nil)
@@ -103,11 +87,13 @@ NSString* commandQueue;
     
     while(commandQueue==nil){
         [progressIndicator stopAnimation:self];
+        [interrupt setHidden: YES];
         [cocoaCondition wait];
     }
-    [progressIndicator startAnimation:self];
-    [cocoaCondition unlock];
     
+    [progressIndicator startAnimation:self];
+    [interrupt setHidden:NO];
+    [cocoaCondition unlock];
     
     NSString* commandBuffer = [NSString stringWithString:commandQueue];
     

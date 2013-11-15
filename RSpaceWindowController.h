@@ -8,10 +8,11 @@
 
 @interface RSpaceWindowController : NSWindowController<NSWindowDelegate>
 
+
 @property (strong) IBOutlet NSProgressIndicator *progressIndicator;
+@property (strong) IBOutlet NSButton *interrupt;
 @property (strong) IBOutlet NSTextView *consoleTextView;
 @property (strong) IBOutlet NSWindow *consoleWindow;
-
 
 
 - (void) consoleInput : (NSString*) str;

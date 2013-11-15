@@ -6,15 +6,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <outlet property="delegate" destination="Yzm-Z3-WNx" id="DQb-ah-c9f"/>
+                <outlet property="delegate" destination="Yzm-Z3-WNx" id="TxY-2H-Qxg"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application">
-            <connections>
-                <outlet property="delegate" destination="Yzm-Z3-WNx" id="Mvd-6P-PzO"/>
-            </connections>
-        </customObject>
+        <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="RSpace" id="56">

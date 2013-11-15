@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="consoleTextView" destination="GaO-zm-ylP" id="hLi-mH-xWR"/>
                 <outlet property="consoleWindow" destination="tLh-nR-24A" id="X7T-eG-q47"/>
+                <outlet property="interrupt" destination="tlz-Ot-sVg" id="6Op-rn-OJR"/>
                 <outlet property="progressIndicator" destination="zR4-16-SJW" id="rGi-Bc-DQX"/>
                 <outlet property="window" destination="tLh-nR-24A" id="7dP-Ph-HGm"/>
             </connections>
@@ -80,15 +81,28 @@
                     <constraint firstAttribute="trailing" secondItem="dHK-yl-fLb" secondAttribute="trailing" constant="-1" id="syV-X6-ID7"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="A8D2FAB2-8DBF-4AF0-AE5E-DDB8685154A1" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0u0-Iu-c5f">
+            <toolbar key="toolbar" implicitIdentifier="A8D2FAB2-8DBF-4AF0-AE5E-DDB8685154A1" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="0u0-Iu-c5f">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="fe3-mA-4BP"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="X98-7m-4Tr"/>
+                    <toolbarItem implicitItemIdentifier="BDEFD749-FB34-43D2-9714-3C65AEC58880" label="Interrupt" paletteLabel="Interrupt" id="FWt-IP-1KR">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="0.0" height="20"/>
+                        <size key="maxSize" width="100" height="29"/>
+                        <button key="view" verticalHuggingPriority="750" id="tlz-Ot-sVg">
+                            <rect key="frame" x="0.0" y="14" width="64" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="squareTextured" title="Interrupt" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WFC-66-mei">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="66841530-4E70-4934-B437-BB7E3C7CDEBF" label="" paletteLabel="Progress Bar" tag="-1" id="ReJ-an-Ktu">
                         <nil key="toolTip"/>
                         <size key="minSize" width="16" height="16"/>
                         <size key="maxSize" width="16" height="16"/>
-                        <progressIndicator key="view" canDrawConcurrently="YES" appearanceType="aqua" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="zR4-16-SJW">
+                        <progressIndicator key="view" autoresizesSubviews="NO" canDrawConcurrently="YES" appearanceType="aqua" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="zR4-16-SJW">
                             <rect key="frame" x="29" y="14" width="16" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         </progressIndicator>
@@ -96,6 +110,7 @@
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="X98-7m-4Tr"/>
+                    <toolbarItem reference="FWt-IP-1KR"/>
                     <toolbarItem reference="ReJ-an-Ktu"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -103,5 +118,13 @@
                 <outlet property="delegate" destination="-2" id="9nG-gB-Fcw"/>
             </connections>
         </window>
+        <button verticalHuggingPriority="750" id="sdI-TZ-yRz">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mGF-Lb-GiM">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+        </button>
     </objects>
 </document>

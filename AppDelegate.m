@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RSpaceWindowController.h"
 
+
 @implementation AppDelegate
 
 RSpaceWindowController*  wc;
@@ -22,9 +23,23 @@ RSpaceWindowController*  wc;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
     [pipeReadHandle readInBackgroundAndNotify] ;
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleQuartzWillClose:) name:NSWindowWillCloseNotification object:nil];
+    
     return self;
 }
 
+// do not release the quartz window, as the instance will be released in main R code
+- (void)handleQuartzWillClose:(NSNotification*) aNotification
+{
+    NSWindow* w = [aNotification object];
+    NSLog(@"windows class is %@", [(NSObject*)[w delegate] className]);
+    
+    if (w && [[(NSObject*)[w delegate] className] isEqualToString:@"QuartzCocoaView"]){
+        [w setReleasedWhenClosed:NO];
+    }
+    
+}
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
@@ -32,7 +47,7 @@ RSpaceWindowController*  wc;
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *) app {
     
-	if ([wc windowShouldClose: [wc window]]) {
+	if ([wc windowShouldClose: self]) {
 		return NSTerminateNow;
 	}
     return NSTerminateCancel;
@@ -52,20 +67,17 @@ RSpaceWindowController*  wc;
 -(void)awakeFromNib
 {
     NSLog(@"awakeFromNib");
-//    [consoleWindow setDocumentEdited: YES];
-    
+   
 }
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     
-    //    change close button to dotted button
     wc = [[RSpaceWindowController alloc] initWithWindowNibName:@"RSpaceWindow"];
     [wc showWindow:nil];
     [wc.window makeKeyAndOrderFront:self];
-//    [[wc consoleTextView]setString:@"test"];
-//    NSLog(@"String=%@", [[wc consoleTextView]string] );
+
     
 }
 
