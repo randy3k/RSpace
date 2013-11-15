@@ -8,27 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		25289F23182DC84D00DB2294 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25289F21182DC84D00DB2294 /* MainMenu.xib */; };
+		2530385518359F06008CC886 /* RSpaceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2530385418359F06008CC886 /* RSpaceWindowController.m */; };
+		253038581835B01A008CC886 /* RSpaceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253038561835B01A008CC886 /* RSpaceWindow.xib */; };
 		258F4C2D182DEF6400DC7E6B /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F4C2C182DEF6400DC7E6B /* Engine.m */; };
 		259A2288182CE1AE00C96ED5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 259A2276182CE1AE00C96ED5 /* Credits.rtf */; };
 		259A2289182CE1AE00C96ED5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 259A2278182CE1AE00C96ED5 /* InfoPlist.strings */; };
 		259A228A182CE1AE00C96ED5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259A227A182CE1AE00C96ED5 /* Images.xcassets */; };
 		259A228F182CE1AE00C96ED5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 259A2284182CE1AE00C96ED5 /* main.m */; };
-		259A2290182CE1AE00C96ED5 /* RSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 259A2285182CE1AE00C96ED5 /* RSpace.m */; };
+		259A2290182CE1AE00C96ED5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 259A2285182CE1AE00C96ED5 /* AppDelegate.m */; };
 		25D082A8182CA3AD00BC6AE8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D082A7182CA3AD00BC6AE8 /* Cocoa.framework */; };
 		25D0E3781834ADE200A7F8B1 /* R.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0E3771834ADE200A7F8B1 /* R.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25289F22182DC84D00DB2294 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainMenu.xib; sourceTree = "<group>"; };
+		2530385318359F06008CC886 /* RSpaceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSpaceWindowController.h; sourceTree = "<group>"; };
+		2530385418359F06008CC886 /* RSpaceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSpaceWindowController.m; sourceTree = "<group>"; };
+		253038571835B01A008CC886 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = RSpaceWindow.xib; sourceTree = "<group>"; };
 		258F4C2B182DEF6400DC7E6B /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		258F4C2C182DEF6400DC7E6B /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		259A2270182CE1AE00C96ED5 /* RSpace-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSpace-Prefix.pch"; sourceTree = "<group>"; };
-		259A2271182CE1AE00C96ED5 /* RSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSpace.h; sourceTree = "<group>"; };
+		259A2271182CE1AE00C96ED5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		259A2277182CE1AE00C96ED5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Credits.rtf; sourceTree = "<group>"; };
 		259A2279182CE1AE00C96ED5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		259A227A182CE1AE00C96ED5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		259A2284182CE1AE00C96ED5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		259A2285182CE1AE00C96ED5 /* RSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSpace.m; sourceTree = "<group>"; };
+		259A2285182CE1AE00C96ED5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		259A2286182CE1AE00C96ED5 /* RSpace-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RSpace-Info.plist"; sourceTree = "<group>"; };
 		25D082A4182CA3AD00BC6AE8 /* RSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D082A7182CA3AD00BC6AE8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -55,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				25289F21182DC84D00DB2294 /* MainMenu.xib */,
+				253038561835B01A008CC886 /* RSpaceWindow.xib */,
 				259A2276182CE1AE00C96ED5 /* Credits.rtf */,
 				259A2278182CE1AE00C96ED5 /* InfoPlist.strings */,
 			);
@@ -78,8 +84,10 @@
 				259A227A182CE1AE00C96ED5 /* Images.xcassets */,
 				258F4C2B182DEF6400DC7E6B /* Engine.h */,
 				258F4C2C182DEF6400DC7E6B /* Engine.m */,
-				259A2271182CE1AE00C96ED5 /* RSpace.h */,
-				259A2285182CE1AE00C96ED5 /* RSpace.m */,
+				259A2271182CE1AE00C96ED5 /* AppDelegate.h */,
+				259A2285182CE1AE00C96ED5 /* AppDelegate.m */,
+				2530385318359F06008CC886 /* RSpaceWindowController.h */,
+				2530385418359F06008CC886 /* RSpaceWindowController.m */,
 				259A2292182CE1BF00C96ED5 /* Support */,
 				25D082A6182CA3AD00BC6AE8 /* Frameworks */,
 				25D082A5182CA3AD00BC6AE8 /* Products */,
@@ -171,6 +179,7 @@
 				25289F23182DC84D00DB2294 /* MainMenu.xib in Resources */,
 				259A2289182CE1AE00C96ED5 /* InfoPlist.strings in Resources */,
 				259A2288182CE1AE00C96ED5 /* Credits.rtf in Resources */,
+				253038581835B01A008CC886 /* RSpaceWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,8 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				259A228F182CE1AE00C96ED5 /* main.m in Sources */,
+				2530385518359F06008CC886 /* RSpaceWindowController.m in Sources */,
 				258F4C2D182DEF6400DC7E6B /* Engine.m in Sources */,
-				259A2290182CE1AE00C96ED5 /* RSpace.m in Sources */,
+				259A2290182CE1AE00C96ED5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +222,14 @@
 				25289F22182DC84D00DB2294 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		253038561835B01A008CC886 /* RSpaceWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				253038571835B01A008CC886 /* en */,
+			);
+			name = RSpaceWindow.xib;
 			sourceTree = "<group>";
 		};
 		259A2276182CE1AE00C96ED5 /* Credits.rtf */ = {

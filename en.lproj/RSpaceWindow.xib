@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RSpaceWindowController">
+            <connections>
+                <outlet property="consoleTextView" destination="GaO-zm-ylP" id="hLi-mH-xWR"/>
+                <outlet property="consoleWindow" destination="tLh-nR-24A" id="X7T-eG-q47"/>
+                <outlet property="progressIndicator" destination="zR4-16-SJW" id="rGi-Bc-DQX"/>
+                <outlet property="window" destination="tLh-nR-24A" id="7dP-Ph-HGm"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="RSpace" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" appearanceType="aqua" frameAutosaveName="RSpace" animationBehavior="default" id="tLh-nR-24A">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="90" y="125" width="666" height="463"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" id="BfW-sy-ERN">
+                <rect key="frame" x="0.0" y="0.0" width="666" height="463"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-yl-fLb">
+                        <rect key="frame" x="-1" y="20" width="668" height="443"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="p7H-yZ-qu4">
+                            <rect key="frame" x="0.0" y="0.0" width="668" height="443"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" quoteSubstitution="YES" spellingCorrection="YES" id="GaO-zm-ylP">
+                                    <rect key="frame" x="0.0" y="0.0" width="668" height="443"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="668" height="443"/>
+                                    <size key="maxSize" width="791" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="668" height="443"/>
+                                    <size key="maxSize" width="791" height="10000000"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-2" id="Q0g-cD-0Xr"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="cvq-je-0XQ">
+                            <rect key="frame" x="-100" y="-100" width="572" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2m4-dG-yLG">
+                            <rect key="frame" x="652" y="0.0" width="16" height="443"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <box autoresizesSubviews="NO" appearanceType="aqua" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ZDG-Wu-dCc">
+                        <rect key="frame" x="-2" y="0.0" width="670" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="668" height="18"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="UBd-fj-b6u"/>
+                        </constraints>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dHK-yl-fLb" firstAttribute="leading" secondItem="BfW-sy-ERN" secondAttribute="leading" constant="-1" id="1uB-QS-tLs"/>
+                    <constraint firstItem="ZDG-Wu-dCc" firstAttribute="leading" secondItem="BfW-sy-ERN" secondAttribute="leading" constant="-2" id="1zm-F8-WeT"/>
+                    <constraint firstAttribute="trailing" secondItem="ZDG-Wu-dCc" secondAttribute="trailing" constant="-2" id="6Yx-qn-IVF"/>
+                    <constraint firstAttribute="bottom" secondItem="ZDG-Wu-dCc" secondAttribute="bottom" id="GEw-Xj-pB9"/>
+                    <constraint firstAttribute="bottom" secondItem="dHK-yl-fLb" secondAttribute="bottom" constant="20" id="c34-Nb-Tqa"/>
+                    <constraint firstItem="dHK-yl-fLb" firstAttribute="top" secondItem="BfW-sy-ERN" secondAttribute="top" id="crt-r8-qPl" userLabel="Vertical Space - (0) - Scroll View - Text View - View"/>
+                    <constraint firstAttribute="trailing" secondItem="dHK-yl-fLb" secondAttribute="trailing" constant="-1" id="syV-X6-ID7"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="A8D2FAB2-8DBF-4AF0-AE5E-DDB8685154A1" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0u0-Iu-c5f">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="fe3-mA-4BP"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="X98-7m-4Tr"/>
+                    <toolbarItem implicitItemIdentifier="66841530-4E70-4934-B437-BB7E3C7CDEBF" label="" paletteLabel="Progress Bar" tag="-1" id="ReJ-an-Ktu">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="16" height="16"/>
+                        <size key="maxSize" width="16" height="16"/>
+                        <progressIndicator key="view" canDrawConcurrently="YES" appearanceType="aqua" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="zR4-16-SJW">
+                            <rect key="frame" x="29" y="14" width="16" height="16"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </progressIndicator>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="X98-7m-4Tr"/>
+                    <toolbarItem reference="ReJ-an-Ktu"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="9nG-gB-Fcw"/>
+            </connections>
+        </window>
+    </objects>
+</document>

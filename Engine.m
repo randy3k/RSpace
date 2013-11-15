@@ -11,7 +11,7 @@
 #import "Engine.h"
 #include <Rembedded.h>
 #include <Rinterface.h>
-#include "RSpace.h"
+#include "RSpaceWindowController.h"
 
 void doEvents(){
     NSEvent * event;

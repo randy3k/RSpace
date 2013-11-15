@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Randy Lai. All rights reserved.
 //
 
-@class RSpace;
+@class RSpaceWindowController;
 
 @interface Engine : NSObject
 
-@property (retain) RSpace* console;
+@property (retain) RSpaceWindowController* console;
 
 + (Engine*) R;
 

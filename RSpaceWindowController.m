@@ -1,43 +1,43 @@
 //
-//  RSpace.m
+//  WindowController.m
 //  RSpace
 //
-//  Created by Randy Lai on 11/7/13.
+//  Created by Randy Lai on 11/14/13.
 //  Copyright (c) 2013 Randy Lai. All rights reserved.
 //
 
-#import "RSpace.h"
+#import "RSpaceWindowController.h"
 #import "Engine.h"
 
-
-@implementation RSpace
+@implementation RSpaceWindowController
 
 unsigned long committedLength=0;
-
+BOOL terminating = NO;
+@synthesize consoleWindow;
 @synthesize progressIndicator;
 @synthesize consoleTextView;
-@synthesize consoleScrollView;
-@synthesize consoleWindow;
 
--(id) init
-{
+
+- (id) init{
     self = [super init];
-
-    
-    cocoaCondition = [[NSCondition alloc] init];
-    
-    pipe = [NSPipe pipe] ;
-    pipeReadHandle = [pipe fileHandleForReading] ;
-    dup2([[pipe fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
-    [pipeReadHandle readInBackgroundAndNotify] ;
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleQuartzWillClose:) name:NSWindowWillCloseNotification object:nil];
-    
+
+    cocoaCondition = [[NSCondition alloc] init];
     return self;
 }
 
+- (void) windowDidLoad{
+    
+    [[Engine R] setConsole: self];
+    [[Engine R] activate];
+    
+    //    [NSThread detachNewThreadSelector:@selector(run_repl) toTarget:[Engine R] withObject:nil];
+    //    start R engine in another thread with a larger stack size
+    NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
+    [thread setStackSize:16*1024*1024];
+    [thread start];
+}
 
 // do not release the quartz window, as the instance will be released in main R code
 - (void)handleQuartzWillClose:(NSNotification*) aNotification
@@ -48,47 +48,19 @@ unsigned long committedLength=0;
     if (w && [[(NSObject*)[w delegate] className] isEqualToString:@"QuartzCocoaView"]){
         [w setReleasedWhenClosed:NO];
     }
-       
-}
-
-- (void) handlePipe: notification{
     
-    NSString *str = [[NSString alloc] initWithData: [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem] encoding: NSASCIIStringEncoding] ;
-    
-    [self writeText: @[str]];
-    
-    [pipeReadHandle readInBackgroundAndNotify] ;
-}
-
--(void)awakeFromNib
-{
-    NSLog(@"awakeFromNib");
-
 }
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void) shouldCloseDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo{
     
-    //    change close button to dotted button
-    [consoleWindow setDocumentEdited: YES];
-    
-    [[Engine R] setConsole: self];
-    [[Engine R] activate];
-
-//    [NSThread detachNewThreadSelector:@selector(run_repl) toTarget:[Engine R] withObject:nil];
-//    start R engine in another thread with a larger stack size
-    NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
-    [thread setStackSize:16*1024*1024];
-    [thread start];
-
-
+    if (returnCode==NSAlertFirstButtonReturn){
+        terminating = YES;
+        [consoleWindow close];
+    }
 }
 
-
-BOOL terminating = NO;
-
-- (BOOL)windowShouldClose:(id)sender{
+- (BOOL) windowShouldClose:(id)sender{
     
     if (terminating) return YES;
     
@@ -96,36 +68,17 @@ BOOL terminating = NO;
     
     [alert addButtonWithTitle:NLS(@"Close")];
     [alert addButtonWithTitle:NLS(@"Cancel")];
-
+    
     [alert setInformativeText:NLS(@"All data will be lost!")];
     [alert setMessageText:NLS(@"Do you want to close RSpace?")];
     
-    [alert beginSheetModalForWindow:[consoleTextView window]
+    [alert beginSheetModalForWindow:consoleWindow
                       modalDelegate:self
                      didEndSelector:@selector(shouldCloseDidEnd:returnCode:contextInfo:)
                         contextInfo:nil];
-    return NO;
-}
-
-- (void) shouldCloseDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo{
-
-    if (returnCode==NSAlertFirstButtonReturn){
-        terminating = YES;
-        [[NSApplication sharedApplication] terminate:self];
-    }
-}
-
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *) app {
     
-	if (![self windowShouldClose:self]) {
-		return NSTerminateCancel;
-	}
-    return NSTerminateNow;
-}
-
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
-    return YES;
+    return NO;
+    
 }
 
 
@@ -136,7 +89,7 @@ NSString* commandQueue;
 {
     if (commandQueue != nil)
         return;
-        
+    
     commandQueue = [[NSString alloc] initWithFormat:@"%@\n", str];
     
     [cocoaCondition lock];
@@ -152,7 +105,7 @@ NSString* commandQueue;
         [progressIndicator stopAnimation:self];
         [cocoaCondition wait];
     }
-        [progressIndicator startAnimation:self];
+    [progressIndicator startAnimation:self];
     [cocoaCondition unlock];
     
     
@@ -174,9 +127,9 @@ NSString* commandQueue;
     NSMutableAttributedString* astr = [[NSMutableAttributedString alloc] initWithString : str];
     
     [astr setAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                             font, NSFontAttributeName,
-                             color, NSForegroundColorAttributeName,
-                         nil] range: NSMakeRange(0, [str length])];
+                          font, NSFontAttributeName,
+                          color, NSForegroundColorAttributeName,
+                          nil] range: NSMakeRange(0, [str length])];
     
     // Smart Scrolling
     BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
@@ -200,7 +153,7 @@ NSString* commandQueue;
 
 // Allow changes only for uncommitted text - From R.app
 - (BOOL)textView:(NSTextView *)textView shouldChangeTextInRange:(NSRange)affectedCharRange replacementString:(NSString *)replacementString {
-	if (replacementString && affectedCharRange.location < committedLength) { 
+	if (replacementString && affectedCharRange.location < committedLength) {
 		[textView setSelectedRange:NSMakeRange([[textView textStorage] length],0)];
 		[textView insertText:replacementString];
 		return NO;
@@ -210,12 +163,12 @@ NSString* commandQueue;
 
 // NSResponder
 - (BOOL)textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector{
-        NSLog(@"doCommandBySelector: %@\n", NSStringFromSelector(commandSelector));
+    NSLog(@"doCommandBySelector: %@\n", NSStringFromSelector(commandSelector));
     
     if(textView != consoleTextView) return NO;
     
 	if (@selector(insertNewline:) == commandSelector) {
-
+        
         unsigned long textLength = [[consoleTextView textStorage] length];
         NSRange range = NSMakeRange(committedLength, textLength-committedLength);
         NSString *command = [[consoleTextView string] substringWithRange:range];
@@ -232,10 +185,10 @@ NSString* commandQueue;
         (@selector(moveToBeginningOfParagraph:) == commandSelector ||
          @selector(moveToBeginningOfLine:) == commandSelector ||
          @selector(moveToLeftEndOfLine:) == commandSelector)) {
-        
-        [textView setSelectedRange: NSMakeRange(committedLength,0)];
-		return(YES);
-    }
+            
+            [textView setSelectedRange: NSMakeRange(committedLength,0)];
+            return(YES);
+        }
 	
 	if (@selector(deleteToBeginningOfLine:) == commandSelector || @selector(deleteToBeginningOfParagraph:) == commandSelector) {
 		NSRange r = [textView selectedRange];
@@ -256,14 +209,14 @@ NSString* commandQueue;
         (@selector(moveToBeginningOfParagraphAndModifySelection:) == commandSelector||
          @selector(moveToLeftEndOfLineAndModifySelection:) == commandSelector ||
          @selector(moveToBeginningOfLineAndModifySelection:) == commandSelector)) {
-		NSRange r = [textView selectedRange];
-		r.length = r.location + r.length - committedLength;
-		r.location = committedLength;
-        if((long)r.length<0)
-            r.length=0;
-        [textView setSelectedRange: r];
-		return(YES);
-    }
+            NSRange r = [textView selectedRange];
+            r.length = r.location + r.length - committedLength;
+            r.location = committedLength;
+            if((long)r.length<0)
+                r.length=0;
+            [textView setSelectedRange: r];
+            return(YES);
+        }
 	
 	if (@selector(moveWordLeft:) == commandSelector || @selector(moveLeft:) == commandSelector) {
 		NSRange sr = [textView selectedRange];
@@ -278,9 +231,10 @@ NSString* commandQueue;
 		if (sr.location == committedLength)
             return YES;
 	}
-
+    
     return NO;
 }
 
-@end
 
+
+@end
