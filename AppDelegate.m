@@ -10,16 +10,19 @@
 #import "RSpaceWindowController.h"
 
 
-@implementation AppDelegate
+@implementation AppDelegate{
+     NSPipe* pipeHandle;
+     NSFileHandle* pipeReadHandle;
+     RSpaceWindowController*  wc;
+}
 
-RSpaceWindowController*  wc;
 -(id) init
 {
     self = [super init];
     
-    pipe = [NSPipe pipe] ;
-    pipeReadHandle = [pipe fileHandleForReading] ;
-    dup2([[pipe fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
+    pipeHandle = [NSPipe pipe] ;
+    pipeReadHandle = [pipeHandle fileHandleForReading] ;
+    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
     [pipeReadHandle readInBackgroundAndNotify] ;
     
@@ -41,6 +44,17 @@ RSpaceWindowController*  wc;
     
 }
 
+
+- (void) handlePipe: notification{
+    
+    [pipeReadHandle readInBackgroundAndNotify] ;
+    
+    NSString *str = [[NSString alloc] initWithData: [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem] encoding: NSASCIIStringEncoding] ;
+  
+    [wc writeText: str];
+
+}
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
 }
@@ -51,17 +65,6 @@ RSpaceWindowController*  wc;
 		return NSTerminateNow;
 	}
     return NSTerminateCancel;
-}
-
-- (void) handlePipe: notification{
-    
-    NSString *str = [[NSString alloc] initWithData: [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem] encoding: NSASCIIStringEncoding] ;
-    
-//    [RSpaceWindowController.consoleTextView setString: str];
-    
-    [wc writeText: @[str]];
-    
-    [pipeReadHandle readInBackgroundAndNotify] ;
 }
 
 -(void)awakeFromNib

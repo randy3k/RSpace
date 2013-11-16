@@ -8,8 +8,9 @@
 
 @class RSpaceWindowController;
 
-@interface Engine : NSObject
-
+@interface Engine : NSObject{
+    
+}
 @property (retain) RSpaceWindowController* console;
 
 + (Engine*) R;

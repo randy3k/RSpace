@@ -9,29 +9,45 @@
 #import "RSpaceWindowController.h"
 #import "Engine.h"
 
-@implementation RSpaceWindowController
+@implementation RSpaceWindowController{
 
 NSCondition* cocoaCondition;
 NSString* commandQueue;
-unsigned long committedLength=0;
-BOOL terminating = NO;
+unsigned long committedLength;
+BOOL terminating;
+    
+}
 
 @synthesize consoleWindow;
 @synthesize progressIndicator;
+@synthesize consoleScrollView;
 @synthesize consoleTextView;
 @synthesize interrupt;
 
 - (void) windowDidLoad{
-    
-//    [consoleWindow setDocumentEdited: YES];
 
-    cocoaCondition = [[NSCondition alloc] init];
+//    make textview size practically infinite
+    [[consoleTextView textContainer]
+     setContainerSize:NSMakeSize([consoleTextView textContainer].containerSize.width, FLT_MAX)];
     
+//    NSColor* color = [NSColor blackColor];
+//    
+//    NSFont *font=[NSFont fontWithName:@"Monaco" size:12.0f];
+//
+//    [consoleTextView setTypingAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+//                                           font, NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
+    
+//    initialize variables
+    cocoaCondition = [[NSCondition alloc] init];
+    committedLength = 0;
+    terminating = NO;
+    
+    
+//    Start R Engine
     [[Engine R] setConsole: self];
     [[Engine R] activate];
     
-    //    [NSThread detachNewThreadSelector:@selector(run_repl) toTarget:[Engine R] withObject:nil];
-    //    start R engine in another thread with a larger stack size
+//    start R engine in another thread with a larger stack size
     NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
     [thread setStackSize:16*1024*1024];
     [thread start];
@@ -102,11 +118,9 @@ BOOL terminating = NO;
     return commandBuffer;
 }
 
-
-- (void) writeText: (NSArray*)array {
+- (NSMutableAttributedString*) formatText:(NSString*) str oType: (int) oType{
     
-    NSString* str = [array objectAtIndex:0];
-    NSColor* color = ([array count] == 2)? [array objectAtIndex:1]: nil;
+    NSColor* color = [NSColor blackColor];
     
     NSFont *font=[NSFont fontWithName:@"Monaco" size:12.0f];
     
@@ -116,24 +130,32 @@ BOOL terminating = NO;
                           font, NSFontAttributeName,
                           color, NSForegroundColorAttributeName,
                           nil] range: NSMakeRange(0, [str length])];
+    return astr;
+}
+
+- (void) writeText: (NSString*) str {
     
-    // Smart Scrolling
+    
+    NSMutableAttributedString* astr = [self formatText:str oType:0];
+      // Smart Scrolling
+    
     BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
     
     [[consoleTextView textStorage] appendAttributedString: astr];
-    committedLength = consoleTextView.string.length;
     
+    committedLength = consoleTextView.string.length;
     
     if (scroll)
         [consoleTextView scrollRangeToVisible: NSMakeRange(consoleTextView.string.length, 0)];
     
 }
 
-- (void) writeInput: (NSArray*)array{
-    unsigned long textLength = [[consoleTextView textStorage] length];
+
+- (void) writeInput: str {
+    long textLength = [[consoleTextView textStorage] length];
     [consoleTextView setSelectedRange:NSMakeRange(committedLength, textLength-committedLength)];
     [consoleTextView delete: nil];
-    [self writeText: array];
+    [self writeText: str];
 }
 
 
@@ -147,6 +169,7 @@ BOOL terminating = NO;
 	return YES;
 }
 
+
 // NSResponder
 - (BOOL)textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector{
     NSLog(@"doCommandBySelector: %@\n", NSStringFromSelector(commandSelector));
@@ -155,17 +178,17 @@ BOOL terminating = NO;
     
 	if (@selector(insertNewline:) == commandSelector) {
         
-        unsigned long textLength = [[consoleTextView textStorage] length];
+        long textLength = [[consoleTextView textStorage] length];
         NSRange range = NSMakeRange(committedLength, textLength-committedLength);
         NSString *command = [[consoleTextView string] substringWithRange:range];
         
         [self consoleInput:command];
         
-        [[consoleTextView undoManager] removeAllActions];
+//        [[consoleTextView undoManager] removeAllActions];
         
 		return(YES);
     }
-    
+
 	// From R.app
 	if ([textView selectedRange].location >= committedLength &&
         (@selector(moveToBeginningOfParagraph:) == commandSelector ||

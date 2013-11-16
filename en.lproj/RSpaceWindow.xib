@@ -21,28 +21,29 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="90" y="125" width="666" height="463"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="200" height="100"/>
             <view key="contentView" id="BfW-sy-ERN">
                 <rect key="frame" x="0.0" y="0.0" width="666" height="463"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-yl-fLb">
+                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-yl-fLb">
                         <rect key="frame" x="-1" y="20" width="668" height="443"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="p7H-yZ-qu4">
                             <rect key="frame" x="0.0" y="0.0" width="668" height="443"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" quoteSubstitution="YES" spellingCorrection="YES" id="GaO-zm-ylP">
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" allowsDocumentBackgroundColorChange="YES" fieldEditor="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" id="GaO-zm-ylP">
                                     <rect key="frame" x="0.0" y="0.0" width="668" height="443"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="668" height="443"/>
-                                    <size key="maxSize" width="791" height="10000000"/>
+                                    <size key="maxSize" width="1096" height="100000000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="668" height="443"/>
-                                    <size key="maxSize" width="791" height="10000000"/>
+                                    <size key="maxSize" width="1096" height="100000000000"/>
                                     <connections>
-                                        <outlet property="delegate" destination="-2" id="Q0g-cD-0Xr"/>
+                                        <outlet property="delegate" destination="-2" id="yxy-ZM-vDp"/>
                                     </connections>
                                 </textView>
                             </subviews>
@@ -52,7 +53,7 @@
                             <rect key="frame" x="-100" y="-100" width="572" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2m4-dG-yLG">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2m4-dG-yLG">
                             <rect key="frame" x="652" y="0.0" width="16" height="443"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

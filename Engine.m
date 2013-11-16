@@ -14,37 +14,21 @@
 #include "RSpaceWindowController.h"
 
 
-// count is used to make writing smooth
-int count=0;
-BOOL waitUntilDone=NO;
-void writeText(NSString* s, int oType){
+static NSPipe* pipeHandle;
+static NSFileHandle* pipeReadHandle;
+static NSFileHandle* pipeWriteHandle;
 
-    if (count == 1000){
-        count = 0;
-        waitUntilDone=YES;
-    }
+
+void writeText(NSString* s, int oType){
+//   for gaining speed, use buffer to write text
+    [pipeWriteHandle writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
     
-//    perform on mainthread for thread safty
-    [[[Engine R] console] performSelectorOnMainThread:@selector(writeText:)
-                                           withObject: @[s] waitUntilDone:waitUntilDone];
-    
-    count++;
-    waitUntilDone=NO;
 }
 
 void writeInput(NSString* s, int oType){
-    // change color here
-    
-    if (count == 1000){
-        count = 0;
-        waitUntilDone=YES;
-    }
-    
-    //    perform on mainthread for thread safty
+
     [[[Engine R] console] performSelectorOnMainThread:@selector(writeInput:)
-                                           withObject: @[s] waitUntilDone:waitUntilDone];
-    count++;
-    waitUntilDone=NO;
+                                           withObject:s waitUntilDone:YES];
 }
 
 char* commandBuffer=0;
@@ -102,6 +86,32 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 static Engine* R = nil;
 
 @synthesize console;
+
+- (id) init{
+    self = [super init];
+    
+    pipeHandle = [[NSPipe pipe] init];
+    pipeReadHandle = [pipeHandle fileHandleForReading] ;
+    pipeWriteHandle = [pipeHandle fileHandleForWriting] ;
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
+    [pipeReadHandle readInBackgroundAndNotify] ;
+    
+    return self;
+}
+
+- (void) handlePipe: notification{
+
+    [pipeReadHandle readInBackgroundAndNotify] ;
+    
+    NSData* d = [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem];
+    NSString* str = [[NSString alloc] initWithData:d  encoding: NSUTF8StringEncoding] ;
+    
+    NSLog(@"%@", str);
+    // perform on mainthread for thread safty
+    [[[Engine R] console] performSelectorOnMainThread:@selector(writeInput:)
+                                           withObject:str waitUntilDone:NO];
+
+}
 
 + (Engine*) R
 {

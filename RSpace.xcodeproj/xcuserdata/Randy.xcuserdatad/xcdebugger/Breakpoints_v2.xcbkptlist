@@ -8,14 +8,15 @@
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
+            condition = "scroll==0"
             continueAfterRunningActions = "No"
-            filePath = "AppDelegate.m"
-            timestampString = "406186771.279736"
+            filePath = "RSpaceWindowController.m"
+            timestampString = "406266468.771451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-handlePipe:"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-writeText:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

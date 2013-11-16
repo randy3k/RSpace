@@ -18,6 +18,7 @@
 		259A2290182CE1AE00C96ED5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 259A2285182CE1AE00C96ED5 /* AppDelegate.m */; };
 		25D082A8182CA3AD00BC6AE8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D082A7182CA3AD00BC6AE8 /* Cocoa.framework */; };
 		25D0E3781834ADE200A7F8B1 /* R.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0E3771834ADE200A7F8B1 /* R.framework */; };
+		25E110CC1836FDA0001E042B /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E110CB1836FDA0001E042B /* History.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		25D082AB182CA3AD00BC6AE8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		25D082AC182CA3AD00BC6AE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25D0E3771834ADE200A7F8B1 /* R.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = R.framework; path = /Library/Frameworks/R.framework; sourceTree = "<absolute>"; };
+		25E110CA1836FDA0001E042B /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		25E110CB1836FDA0001E042B /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 			children = (
 				259A2275182CE1AE00C96ED5 /* en.lproj */,
 				259A227A182CE1AE00C96ED5 /* Images.xcassets */,
+				25E110CA1836FDA0001E042B /* History.h */,
+				25E110CB1836FDA0001E042B /* History.m */,
 				258F4C2B182DEF6400DC7E6B /* Engine.h */,
 				258F4C2C182DEF6400DC7E6B /* Engine.m */,
 				2530385318359F06008CC886 /* RSpaceWindowController.h */,
@@ -209,6 +214,7 @@
 				259A228F182CE1AE00C96ED5 /* main.m in Sources */,
 				2530385518359F06008CC886 /* RSpaceWindowController.m in Sources */,
 				258F4C2D182DEF6400DC7E6B /* Engine.m in Sources */,
+				25E110CC1836FDA0001E042B /* History.m in Sources */,
 				259A2290182CE1AE00C96ED5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

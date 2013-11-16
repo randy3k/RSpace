@@ -13,16 +13,17 @@
 @property (strong) IBOutlet NSButton *interrupt;
 @property (strong) IBOutlet NSTextView *consoleTextView;
 @property (strong) IBOutlet NSWindow *consoleWindow;
+@property (strong) IBOutlet NSScrollView* consoleScrollView;
 
 
 - (void) consoleInput : (NSString*) str;
 
-- (void) writeText: (NSArray*) array;
+- (void) writeText: (NSString*) str;
 
-- (void) writeInput: (NSArray*) array;
+- (void) writeInput: str;
 
 - (NSString*) readText;
 
-- (BOOL)textView:(NSTextView *)fieldEditor doCommandBySelector:(SEL)commandSelector;
+//- (BOOL)textView:(NSTextView *)fieldEditor doCommandBySelector:(SEL)commandSelector;
 
 @end

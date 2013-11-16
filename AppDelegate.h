@@ -7,9 +7,6 @@
 //
 
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>{
-    NSPipe* pipe;
-    NSFileHandle* pipeReadHandle;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @end
