@@ -149,13 +149,9 @@ static Engine* R = nil;
     R_CStackLimit = -1;
     
    // do all NSEvents before running repl
-    NSEvent * event;
-    do
-    {
-        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
-        [NSApp sendEvent: event];
-    }
-    while(event != nil);
+    NSEvent *event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
+    [NSApp sendEvent: event];
+
 }
 
 

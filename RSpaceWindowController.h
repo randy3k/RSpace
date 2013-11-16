@@ -24,6 +24,4 @@
 
 - (NSString*) readText;
 
-//- (BOOL)textView:(NSTextView *)fieldEditor doCommandBySelector:(SEL)commandSelector;
-
 @end

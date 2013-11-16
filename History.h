@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface History : NSObject
+@interface History : NSObject{
+    NSMutableArray* history;
+    long current;
+    NSString* dirt;
+}
+
+- (BOOL) isDirty;
+
+- (void) updateDirt: (NSString*) str;
+
+- (void) add: (NSString*) str;
+
+- (NSString*) next;
+
+- (NSString*) prev;
 
 @end

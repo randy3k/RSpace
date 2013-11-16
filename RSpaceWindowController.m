@@ -8,6 +8,7 @@
 
 #import "RSpaceWindowController.h"
 #import "Engine.h"
+#import "History.h"
 
 @implementation RSpaceWindowController{
 
@@ -15,6 +16,7 @@ NSCondition* cocoaCondition;
 NSString* commandQueue;
 unsigned long committedLength;
 BOOL terminating;
+History* hist;
     
 }
 
@@ -41,6 +43,7 @@ BOOL terminating;
     cocoaCondition = [[NSCondition alloc] init];
     committedLength = 0;
     terminating = NO;
+    hist = [[History alloc] init];
     
     
 //    Start R Engine
@@ -91,6 +94,8 @@ BOOL terminating;
         return;
     
     commandQueue = [[NSString alloc] initWithFormat:@"%@\n", str];
+    
+    [hist add: str];
     
     [cocoaCondition lock];
     [cocoaCondition signal];
@@ -190,6 +195,44 @@ BOOL terminating;
     }
 
 	// From R.app
+    
+	// ---- history browsing ----
+	if (@selector(moveUp:) == commandSelector) {
+        long textLength = [[textView textStorage] length];
+        NSRange sr=[textView selectedRange];
+        if (sr.location==committedLength || sr.location==textLength) {
+            NSRange rr=NSMakeRange(committedLength, textLength-committedLength);
+            NSString *text = [[textView attributedSubstringFromRange:rr] string];
+            if([hist isDirty]){
+                [hist updateDirt: text];
+            }
+            NSString *news = [hist prev];
+            if (news!=nil) {
+                sr.length=0;
+                sr.location=committedLength;
+                [textView setSelectedRange:sr];
+                [textView replaceCharactersInRange:rr withString:news];
+                [textView insertText:@""];
+            }
+			return(YES);
+        }
+    }
+    if (@selector(moveDown:) == commandSelector) {
+        long textLength = [[textView textStorage] length];
+        NSRange sr=[textView selectedRange];
+        if ((sr.location==committedLength || sr.location==textLength) && ![hist isDirty] ) {
+            NSRange rr=NSMakeRange(committedLength, textLength-committedLength);
+            NSString *news = [hist next];
+            if (news==nil) news=@"";
+            sr.length=0; sr.location=committedLength;
+            [textView setSelectedRange:sr];
+            [textView replaceCharactersInRange:rr withString:news];
+            [textView insertText:@""];
+			return(YES);
+        }
+    }
+    
+    
 	if ([textView selectedRange].location >= committedLength &&
         (@selector(moveToBeginningOfParagraph:) == commandSelector ||
          @selector(moveToBeginningOfLine:) == commandSelector ||
