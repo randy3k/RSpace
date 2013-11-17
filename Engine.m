@@ -118,12 +118,6 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 
 - (void) waitToRead{
     
-    // do all NSEvents before running repl
-    
-    NSEvent* event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantFuture] inMode:NSDefaultRunLoopMode dequeue:YES];
-    [NSApp sendEvent: event];
-
-    
     if (buflen >0){
         [condition lock];
         [condition wait];

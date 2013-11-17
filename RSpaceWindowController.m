@@ -15,6 +15,7 @@
 NSCondition* cocoaCondition;
 NSString* commandQueue;
 unsigned long committedLength;
+unsigned long prompt;
 BOOL terminating;
 History* hist;
 NSPipe* pipeHandle;
@@ -36,17 +37,18 @@ NSFileHandle* pipeReadHandle;
     
     // initialize variables
     cocoaCondition = [[NSCondition alloc] init];
-    committedLength = 0;
+    committedLength = prompt = 0;
     terminating = NO;
     hist = [[History alloc] init];
     
     
     pipeHandle = [NSPipe pipe] ;
     pipeReadHandle = [pipeHandle fileHandleForReading] ;
+
+    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
 #ifndef DEBUG
     dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stderr)) ;
 #endif
-    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
     
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
     [pipeReadHandle readInBackgroundAndNotify] ;
@@ -57,12 +59,11 @@ NSFileHandle* pipeReadHandle;
 
 - (void) windowDidLoad{
     
-   // NSColor* color = [NSColor blackColor];
+    NSColor* color = [NSColor blackColor];
 
-   // NSFont *font=[NSFont fontWithName:@"Monaco" size:12.0f];
+    NSFont *font=[NSFont fontWithName:@"Monaco" size:12.0f];
 
-   // [consoleTextView setTypingAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-   //                                        font, NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
+    [consoleTextView setTypingAttributes: [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
 
 
    // Start R Engine
@@ -70,14 +71,15 @@ NSFileHandle* pipeReadHandle;
     [[Engine R] activate];
 
     // do all NSEvents before running repl
-    NSEvent *event;
-    do{
-        NSLog(@"do");
-        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate dateWithTimeIntervalSinceNow:0.05] inMode:NSDefaultRunLoopMode dequeue:YES];
-        [NSApp sendEvent: event];
-    }while(event!=nil);
+    //NSEvent *event;
+    //do{
+    //    NSLog(@"do");
+    //    event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate dateWithTimeIntervalSinceNow:0.05] inMode:NSDefaultRunLoopMode dequeue:YES];
+    //    [NSApp sendEvent: event];
+    //}while(event!=nil);
     
    // start R engine in another thread with a larger stack size
+    
     NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
     [thread setStackSize:16*1024*1024];
     [thread start];
@@ -102,7 +104,7 @@ NSFileHandle* pipeReadHandle;
     
     NSString *str = [[NSString alloc] initWithData: [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem] encoding: NSASCIIStringEncoding] ;
     
-    [self performSelectorOnMainThread:@selector(writeText:) withObject:str waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(writeText:) withObject:str waitUntilDone:YES];
     
 }
 
@@ -190,35 +192,49 @@ NSFileHandle* pipeReadHandle;
     return astr;
 }
 
-- (void) writeText: (NSString*) str {
+
+- (void) writeText: (NSString*) str{
     @synchronized(@"writeText"){
-        NSMutableAttributedString* astr = [self formatText:str oType:0];
-        // Smart Scrolling
-        
         BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
         
-        [[consoleTextView textStorage] appendAttributedString: astr];
+        [consoleTextView replaceCharactersInRange:NSMakeRange(prompt, 0) withString:str];
         
+        prompt += [str length];
         committedLength = consoleTextView.string.length;
         
         if (scroll)
-            [consoleTextView scrollRangeToVisible: NSMakeRange(consoleTextView.string.length, 0)];
+            [consoleTextView scrollRangeToVisible: NSMakeRange(committedLength, 0)];
     }
-
 }
 
-
 - (void) writeInput: str {
-    long textLength = [[consoleTextView textStorage] length];
-    [consoleTextView setSelectedRange:NSMakeRange(committedLength, textLength-committedLength)];
-    [consoleTextView delete: nil];
-    [self writeText: str];
+    @synchronized(@"writeText"){
+        BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
+        long textLength = [[consoleTextView textStorage] length];
+        [consoleTextView setSelectedRange:NSMakeRange(committedLength, textLength-committedLength)];
+        [consoleTextView delete: nil];
+        
+        [consoleTextView replaceCharactersInRange:NSMakeRange(committedLength, 0) withString:str];
+        prompt = committedLength = consoleTextView.string.length;
+        
+        if (scroll)
+            [consoleTextView scrollRangeToVisible: NSMakeRange(committedLength, 0)];
+    }
 }
 
 - (void) writePrompt: str {
-    [self writeText: str];
+    @synchronized(@"writeText"){
+        BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
+        
+        prompt = committedLength;
+        [consoleTextView replaceCharactersInRange:NSMakeRange(committedLength, 0) withString:str];
+        committedLength = consoleTextView.string.length;
+        
+        if (scroll)
+            [consoleTextView scrollRangeToVisible: NSMakeRange(committedLength, 0)];
+    }
 }
-
+    
 #pragma mark -
 
 // Allow changes only for uncommitted text - From R.app
