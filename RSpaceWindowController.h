@@ -22,6 +22,8 @@
 
 - (void) writeInput: str;
 
+- (void) writePrompt: str;
+
 - (NSString*) readText;
 
 @end

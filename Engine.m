@@ -24,12 +24,10 @@ int R_ReadConsole(const char *prompt, unsigned char *buf, int len, int addtohist
     
     [R waitToRead];
     
-    [[R console] performSelectorOnMainThread:@selector(writeText:)
-                                           withObject:[NSString stringWithUTF8String: prompt]
-                                        waitUntilDone:YES];
-
+    [[R wc] performSelectorOnMainThread:@selector(writePrompt:) withObject:[NSString stringWithUTF8String: (char*) prompt] waitUntilDone:YES];
+    
     if (!commandBuffer){
-        NSString* str = [[[Engine R] console] readText];
+        NSString* str = [[[Engine R] wc] readText];
         commandBuffer = (char*)[str UTF8String];
     }
 
@@ -51,9 +49,7 @@ int R_ReadConsole(const char *prompt, unsigned char *buf, int len, int addtohist
     else
         commandBuffer=0;
 
-    [[R console] performSelectorOnMainThread:@selector(writeInput:)
-                                           withObject:[NSString stringWithUTF8String: (char*) buf]
-                                        waitUntilDone:YES];
+    [[R wc] performSelectorOnMainThread:@selector(writeInput:) withObject:[NSString stringWithUTF8String: (char*) buf] waitUntilDone:YES];
 
     return 1;
 }
@@ -77,7 +73,7 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
     unsigned long buflen;
 }
 
-@synthesize console;
+@synthesize wc;
          
 - (id) init{
     self = [super init];
@@ -98,21 +94,18 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 - (void) writePipe: (NSString*) str{
     // for gaining speed, use buffer to write text
     [pipeWriteHandle writeData: [str dataUsingEncoding:NSUTF8StringEncoding]];
-    // for synchronization
+    // for synchronization and locking
     buflen += [str length];
 }
 
 - (void) handlePipe: notification{
-
-    
     [pipeReadHandle readInBackgroundAndNotify] ;
     
     NSData* d = [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem];
     NSString* str = [[NSString alloc] initWithData:d  encoding: NSUTF8StringEncoding] ;
 
     // perform on mainthread for thread safty
-    [[[Engine R] console] performSelectorOnMainThread:@selector(writeInput:)
-                                           withObject:str waitUntilDone:YES];
+    [[R wc] performSelectorOnMainThread:@selector(writeText:) withObject:str waitUntilDone:YES];
 
     buflen -= [str length];
     NSLog(@"buflen = %lu", buflen);
@@ -124,6 +117,13 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 }
 
 - (void) waitToRead{
+    
+    // do all NSEvents before running repl
+    
+    NSEvent* event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantFuture] inMode:NSDefaultRunLoopMode dequeue:YES];
+    [NSApp sendEvent: event];
+
+    
     if (buflen >0){
         [condition lock];
         [condition wait];
@@ -165,15 +165,14 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 
     // disable stack limit checking
     R_CStackLimit = -1;
-
-   // do all NSEvents before running repl
-    [self doEvents];
+    
 }
 
 
 - (void) run_repl
 {
 
+    
     NSLog(@"run repl");
     R_ReplDLLinit();
 
@@ -184,9 +183,5 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 }
 
 
-- (void) doEvents{
-    NSEvent *event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES];
-    [NSApp sendEvent: event];
-}
 
 @end

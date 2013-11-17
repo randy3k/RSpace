@@ -28,12 +28,35 @@ NSFileHandle* pipeReadHandle;
 @synthesize consoleTextView;
 @synthesize interrupt;
 
-- (void) windowDidLoad{
-
-   // make textview size practically infinite
+- (void) awakeFromNib{
+    
+    // make textview size practically infinite
     [[consoleTextView textContainer]
      setContainerSize:NSMakeSize([consoleTextView textContainer].containerSize.width, FLT_MAX)];
+    
+    // initialize variables
+    cocoaCondition = [[NSCondition alloc] init];
+    committedLength = 0;
+    terminating = NO;
+    hist = [[History alloc] init];
+    
+    
+    pipeHandle = [NSPipe pipe] ;
+    pipeReadHandle = [pipeHandle fileHandleForReading] ;
+#ifndef DEBUG
+    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stderr)) ;
+#endif
+    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
+    [pipeReadHandle readInBackgroundAndNotify] ;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWindowWillClose:) name:NSWindowWillCloseNotification object:nil];
 
+}
+
+- (void) windowDidLoad{
+    
    // NSColor* color = [NSColor blackColor];
 
    // NSFont *font=[NSFont fontWithName:@"Monaco" size:12.0f];
@@ -41,25 +64,19 @@ NSFileHandle* pipeReadHandle;
    // [consoleTextView setTypingAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
    //                                        font, NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
 
-   // initialize variables
-    cocoaCondition = [[NSCondition alloc] init];
-    committedLength = 0;
-    terminating = NO;
-    hist = [[History alloc] init];
-
-    
-    pipeHandle = [NSPipe pipe] ;
-    pipeReadHandle = [pipeHandle fileHandleForReading] ;
-    dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
-    [pipeReadHandle readInBackgroundAndNotify] ;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleQuartzWillClose:) name:NSWindowWillCloseNotification object:nil];
 
    // Start R Engine
-    [[Engine R] setConsole: self];
+    [[Engine R] setWc: self];
     [[Engine R] activate];
 
+    // do all NSEvents before running repl
+    NSEvent *event;
+    do{
+        NSLog(@"do");
+        event = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate dateWithTimeIntervalSinceNow:0.05] inMode:NSDefaultRunLoopMode dequeue:YES];
+        [NSApp sendEvent: event];
+    }while(event!=nil);
+    
    // start R engine in another thread with a larger stack size
     NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
     [thread setStackSize:16*1024*1024];
@@ -67,12 +84,12 @@ NSFileHandle* pipeReadHandle;
 }
 
 
-// do not release the quartz window, as the instance will be released in main R code
-- (void)handleQuartzWillClose:(NSNotification*) aNotification
+- (void)handleWindowWillClose:(NSNotification*) aNotification
 {
     NSWindow* w = [aNotification object];
     NSLog(@"windows class is %@", [(NSObject*)[w delegate] className]);
     
+    // do not release the quartz window, as the instance will be released in main R code
     if (w && [[(NSObject*)[w delegate] className] isEqualToString:@"QuartzCocoaView"]){
         [w setReleasedWhenClosed:NO];
     }
@@ -85,7 +102,7 @@ NSFileHandle* pipeReadHandle;
     
     NSString *str = [[NSString alloc] initWithData: [[notification userInfo] objectForKey: NSFileHandleNotificationDataItem] encoding: NSASCIIStringEncoding] ;
     
-    [self writeText: str];
+    [self performSelectorOnMainThread:@selector(writeText:) withObject:str waitUntilDone:NO];
     
 }
 
@@ -122,18 +139,19 @@ NSFileHandle* pipeReadHandle;
 
 #pragma mark -
 
-- (void) consoleInput: (NSString*) str
-{
-    if (commandQueue != nil)
-        return;
-
-    commandQueue = [[NSString alloc] initWithFormat:@"%@\n", str];
-
-    [hist add: str];
-
-    [cocoaCondition lock];
-    [cocoaCondition signal];
-    [cocoaCondition unlock];
+- (void) consoleInput: (NSString*) str{
+    @synchronized(@"consoleInput"){
+        if (commandQueue != nil)
+            return;
+        
+        commandQueue = [[NSString alloc] initWithFormat:@"%@\n", str];
+        
+        [hist add: str];
+        
+        [cocoaCondition lock];
+        [cocoaCondition signal];
+        [cocoaCondition unlock];
+    }
 }
 
 - (NSString*) readText{
@@ -173,19 +191,19 @@ NSFileHandle* pipeReadHandle;
 }
 
 - (void) writeText: (NSString*) str {
-
-
-    NSMutableAttributedString* astr = [self formatText:str oType:0];
-      // Smart Scrolling
-
-    BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
-
-    [[consoleTextView textStorage] appendAttributedString: astr];
-
-    committedLength = consoleTextView.string.length;
-
-    if (scroll)
-        [consoleTextView scrollRangeToVisible: NSMakeRange(consoleTextView.string.length, 0)];
+    @synchronized(@"writeText"){
+        NSMutableAttributedString* astr = [self formatText:str oType:0];
+        // Smart Scrolling
+        
+        BOOL scroll = (NSMaxY(consoleTextView.visibleRect) == NSMaxY(consoleTextView.bounds));
+        
+        [[consoleTextView textStorage] appendAttributedString: astr];
+        
+        committedLength = consoleTextView.string.length;
+        
+        if (scroll)
+            [consoleTextView scrollRangeToVisible: NSMakeRange(consoleTextView.string.length, 0)];
+    }
 
 }
 
@@ -194,6 +212,10 @@ NSFileHandle* pipeReadHandle;
     long textLength = [[consoleTextView textStorage] length];
     [consoleTextView setSelectedRange:NSMakeRange(committedLength, textLength-committedLength)];
     [consoleTextView delete: nil];
+    [self writeText: str];
+}
+
+- (void) writePrompt: str {
     [self writeText: str];
 }
 

@@ -11,7 +11,7 @@
 @interface Engine : NSObject{
     
 }
-@property (retain) RSpaceWindowController* console;
+@property (retain) RSpaceWindowController* wc;
 
 + (Engine*) R;
 
@@ -23,6 +23,5 @@
 
 - (void) run_repl;
 
-- (void) doEvents;
 
 @end
