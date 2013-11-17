@@ -15,10 +15,14 @@
 
 + (Engine*) R;
 
+- (void) writePipe: (NSString*) str;
+
+- (void) waitToRead;
+
 - (void) activate;
 
 - (void) run_repl;
 
-
+- (void) doEvents;
 
 @end
