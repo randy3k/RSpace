@@ -11,6 +11,8 @@
 		25289F23182DC84D00DB2294 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25289F21182DC84D00DB2294 /* MainMenu.xib */; };
 		2530385518359F06008CC886 /* RSpaceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2530385418359F06008CC886 /* RSpaceWindowController.m */; };
 		253038581835B01A008CC886 /* RSpaceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253038561835B01A008CC886 /* RSpaceWindow.xib */; };
+		25331B0E1839DFE400FCF28F /* RSpace.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = 25331B0A1839DFE400FCF28F /* RSpace.scriptSuite */; };
+		25331B0F1839DFE400FCF28F /* RSpace.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = 25331B0C1839DFE400FCF28F /* RSpace.scriptTerminology */; };
 		258F4C2D182DEF6400DC7E6B /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F4C2C182DEF6400DC7E6B /* Engine.m */; };
 		259A2288182CE1AE00C96ED5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 259A2276182CE1AE00C96ED5 /* Credits.rtf */; };
 		259A2289182CE1AE00C96ED5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 259A2278182CE1AE00C96ED5 /* InfoPlist.strings */; };
@@ -28,6 +30,8 @@
 		2530385318359F06008CC886 /* RSpaceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSpaceWindowController.h; sourceTree = "<group>"; };
 		2530385418359F06008CC886 /* RSpaceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSpaceWindowController.m; sourceTree = "<group>"; };
 		253038571835B01A008CC886 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = RSpaceWindow.xib; sourceTree = "<group>"; };
+		25331B0B1839DFE400FCF28F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; name = en; path = RSpace.scriptSuite; sourceTree = "<group>"; };
+		25331B0D1839DFE400FCF28F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = RSpace.scriptTerminology; sourceTree = "<group>"; };
 		258F4C2B182DEF6400DC7E6B /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		258F4C2C182DEF6400DC7E6B /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Engine.m; sourceTree = "<group>"; };
 		259A2270182CE1AE00C96ED5 /* RSpace-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSpace-Prefix.pch"; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				253038561835B01A008CC886 /* RSpaceWindow.xib */,
 				259A2276182CE1AE00C96ED5 /* Credits.rtf */,
 				259A2278182CE1AE00C96ED5 /* InfoPlist.strings */,
+				25331B0A1839DFE400FCF28F /* RSpace.scriptSuite */,
+				25331B0C1839DFE400FCF28F /* RSpace.scriptTerminology */,
 			);
 			path = en.lproj;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25331B0E1839DFE400FCF28F /* RSpace.scriptSuite in Resources */,
 				250486901838C0ED00368B57 /* todo in Resources */,
+				25331B0F1839DFE400FCF28F /* RSpace.scriptTerminology in Resources */,
 				259A228A182CE1AE00C96ED5 /* Images.xcassets in Resources */,
 				25289F23182DC84D00DB2294 /* MainMenu.xib in Resources */,
 				259A2289182CE1AE00C96ED5 /* InfoPlist.strings in Resources */,
@@ -240,6 +248,22 @@
 				253038571835B01A008CC886 /* en */,
 			);
 			name = RSpaceWindow.xib;
+			sourceTree = "<group>";
+		};
+		25331B0A1839DFE400FCF28F /* RSpace.scriptSuite */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25331B0B1839DFE400FCF28F /* en */,
+			);
+			name = RSpace.scriptSuite;
+			sourceTree = "<group>";
+		};
+		25331B0C1839DFE400FCF28F /* RSpace.scriptTerminology */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25331B0D1839DFE400FCF28F /* en */,
+			);
+			name = RSpace.scriptTerminology;
 			sourceTree = "<group>";
 		};
 		259A2276182CE1AE00C96ED5 /* Credits.rtf */ = {

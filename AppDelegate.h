@@ -7,6 +7,11 @@
 //
 
 
+@interface NSApplication (ScriptingSupport)
+- (id)handleDCMDCommand:(NSScriptCommand*)command;
+@end
+
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @end

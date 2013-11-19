@@ -10,6 +10,8 @@
 #import "Engine.h"
 #import "History.h"
 
+static RSpaceWindowController* wc = nil;
+
 @implementation RSpaceWindowController{
 
 NSCondition* cocoaCondition;
@@ -20,7 +22,8 @@ BOOL terminating;
 History* hist;
 NSPipe* pipeHandle;
 NSFileHandle* pipeReadHandle;
-
+NSThread* Rthread;
+    
 }
 
 @synthesize consoleWindow;
@@ -29,8 +32,15 @@ NSFileHandle* pipeReadHandle;
 @synthesize consoleTextView;
 @synthesize interrupt;
 
++ (RSpaceWindowController*) wc
+{
+    return wc;
+}
+
+
 - (void) awakeFromNib{
     
+    wc = self;
     // make textview size practically infinite
     [[consoleTextView textContainer]
      setContainerSize:NSMakeSize([consoleTextView textContainer].containerSize.width, FLT_MAX)];
@@ -48,7 +58,7 @@ NSFileHandle* pipeReadHandle;
     dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stdout)) ;
 #ifndef DEBUG
     dup2([[pipeHandle fileHandleForWriting] fileDescriptor], fileno(stderr)) ;
-#endif
+    #endif
     
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
     [pipeReadHandle readInBackgroundAndNotify] ;
@@ -80,9 +90,9 @@ NSFileHandle* pipeReadHandle;
     
    // start R engine in another thread with a larger stack size
     
-    NSThread* thread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
-    [thread setStackSize:16*1024*1024];
-    [thread start];
+    Rthread=[[NSThread alloc]initWithTarget:[Engine R] selector:@selector(run_repl) object:nil];
+    [Rthread setStackSize:16*1024*1024];
+    [Rthread start];
 }
 
 
@@ -167,6 +177,8 @@ NSFileHandle* pipeReadHandle;
     }
 
     [progressIndicator startAnimation:self];
+    [interrupt setEnabled:YES];
+    [interrupt setState:NSOffState];
     [interrupt setHidden:NO];
     [cocoaCondition unlock];
 
@@ -359,6 +371,14 @@ NSFileHandle* pipeReadHandle;
 	}
 
     return NO;
+}
+
+#pragma mark -
+
+- (void) interrupt:(id)sender{
+    
+    [[Engine R] performSelectorInBackground:@selector(interrupt) withObject:nil];
+    [interrupt setEnabled:NO];
 }
 
 

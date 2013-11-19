@@ -15,6 +15,7 @@
 @property (strong) IBOutlet NSWindow *consoleWindow;
 @property (strong) IBOutlet NSScrollView* consoleScrollView;
 
++ (RSpaceWindowController*) wc;
 
 - (void) consoleInput : (NSString*) str;
 
@@ -25,5 +26,7 @@
 - (void) writePrompt: str;
 
 - (NSString*) readText;
+
+- (IBAction)interrupt:(id)sender;
 
 @end

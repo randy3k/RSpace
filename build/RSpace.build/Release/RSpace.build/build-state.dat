@@ -1,0 +1,516 @@
+TRSpace
+v6
+r1
+cCheck dependencies
+cProcessPCH /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch.pch RSpace-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o /Users/Randy/Documents/Scripts/RSpace/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o /Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o /Users/Randy/Documents/Scripts/RSpace/Engine.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o /Users/Randy/Documents/Scripts/RSpace/History.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o /Users/Randy/Documents/Scripts/RSpace/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace normal x86_64
+cCopyPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite en.lproj/RSpace.scriptSuite
+cCpResource todo build/Release/RSpace.app/Contents/Resources/todo
+cCopyPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology en.lproj/RSpace.scriptTerminology
+cCompileXIB /Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib
+cCpResource en.lproj/Credits.rtf build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf
+cCopyStringsFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings en.lproj/InfoPlist.strings
+cCompileXIB /Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib
+cCompileAssetCatalog /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources /Users/Randy/Documents/Scripts/RSpace/Images.xcassets
+cProcessInfoPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Info.plist /Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist
+cGenerateDSYMFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace
+cPhaseScriptExecution Run\ Script /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh
+cTouch /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c000000005282267000000000000000AA
+t1384261232
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000052672A03000000000000044C
+t1382492675
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c0000000052672A0300000000000001DB
+t1382492675
+s475
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c0000000052672A04000000000000253C
+t1382492676
+s9532
+
+N/Library/Frameworks/R.framework/R
+c000000005242D0C100000000002EB248
+t1380110529
+s3060296
+
+N/Users/Randy/Documents/Scripts/RSpace/AppDelegate.m
+c000000005289B9400000000000000536
+t1384757568
+s1334
+
+N/Users/Randy/Documents/Scripts/RSpace/Engine.m
+c000000005289B52D0000000000001082
+t1384756525
+s4226
+
+N/Users/Randy/Documents/Scripts/RSpace/History.m
+c000000005288985E00000000000003DA
+t1384683614
+s986
+
+N/Users/Randy/Documents/Scripts/RSpace/Images.xcassets
+c000000005289B7B300000000000000AA
+t1384757171
+s170
+
+N/Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist
+c000000005289B3AD0000000000000476
+t1384756141
+s1142
+
+N/Users/Randy/Documents/Scripts/RSpace/RSpace-Prefix.pch
+c0000000052886080000000000000012E
+t1384669312
+s302
+
+N/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m
+c000000005289B9AD0000000000002F33
+t1384757677
+s12083
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o
+t1384757687
+s51884
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o
+t1384757687
+s44616
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o
+t1384757687
+s13536
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace.LinkFileList
+c000000005289B9B70000000000000235
+t1384757687
+s565
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o
+t1384757687
+s97040
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o
+t1384757687
+s5480
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh
+c000000005289B9B700000000000000BA
+t1384757687
+s186
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_dependencies.txt
+t1384757688
+s316
+
+N/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_generated_info.plist
+t1384757688
+s243
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app
+t1384757687
+s102
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM
+t2
+s0
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Info.plist
+t1384757688
+s1507
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace
+t1384757687
+s55044
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/PkgInfo
+t1384757688
+s8
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf
+t1384757688
+s444
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings
+t1384757688
+s92
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/MainMenu.nib
+t1384757688
+s26251
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite
+t1384757688
+s464
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology
+t1384757688
+s366
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpaceWindow.nib
+t1384757688
+s11650
+
+N/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/todo
+t1384757688
+s37
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/Credits.rtf
+c0000000052847EBC00000000000001BC
+t1384414908
+s444
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/InfoPlist.strings
+c00000000527D8B95000000000000002D
+t1383959445
+s45
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib
+c00000000528706B5000000000000B304
+t1384580789
+s45828
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpace.scriptSuite
+c000000005289AFCF00000000000001D0
+t1384755151
+s464
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpace.scriptTerminology
+c000000005289B0D9000000000000016E
+t1384755417
+s366
+
+N/Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib
+c000000005289922800000000000029FA
+t1384747560
+s10746
+
+N/Users/Randy/Documents/Scripts/RSpace/main.m
+c000000005286C56C00000000000002CC
+t1384564076
+s716
+
+N/Users/Randy/Documents/Scripts/RSpace/todo
+c00000000528895610000000000000025
+t1384682849
+s37
+
+N/var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch.pch
+t1384669498
+s13698360
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc0ecba37f139b841^5ea2ca37f139b841^---0#1#1#--18"Check dependencies36"BD5B059C-6A99-4565-84FC-96A52F2D32E8-
+
+CCompileAssetCatalog /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources /Users/Randy/Documents/Scripts/RSpace/Images.xcassets
+s406450488.001925
+e406450488.867498
+r1
+xCompileAssetCatalog
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources
+x/Users/Randy/Documents/Scripts/RSpace/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/AppIcon.icns
+o/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/Assets.car
+o/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"[1mCompileAssetCatalog[0m build/Release/RSpace.app/Contents/Resources [1mImages.xcassets[0m95"[1mCompileAssetCatalog[0m build/Release/RSpace.app/Contents/Resources [1mImages.xcassets[0mdc9e0038f139b841^7b14de38f139b841^-344"/* com.apple.actool.compilation-results *//Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/AppIcon.icns/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/Assets.car/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@61"file:///Users/Randy/Documents/Scripts/RSpace/Images.xcassets/0000000000000000^769"[1mCompileAssetCatalog[0m build/Release/RSpace.app/Contents/Resources [1mImages.xcassets[0m    cd /Users/Randy/Documents/Scripts/RSpace    /Applications/Xcode.app/Contents/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_generated_info.plist --app-icon AppIcon --platform macosx --minimum-deployment-target 10.9 --target-device mac --compile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources /Users/Randy/Documents/Scripts/RSpace/Images.xcassets36"FAC7DA4C-0EA9-4C70-A3F5-17CA37868D9A-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o /Users/Randy/Documents/Scripts/RSpace/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s406450487.797811
+e406450487.877072
+r1
+xCompileC
+xbuild/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o
+x/Users/Randy/Documents/Scripts/RSpace/AppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Randy/Documents/Scripts/RSpace/AppDelegate.m
+d/Users/Randy/Documents/Scripts/RSpace/AppDelegate.h
+d/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Compile /Users/Randy/Documents/Scripts/RSpace/AppDelegate.m184"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o [1mAppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler2061cc37f139b841^1e88e037f139b841^---0#0#1#-19%DVTDocumentLocation2@58"file:///Users/Randy/Documents/Scripts/RSpace/AppDelegate.m0000000000000000^3213"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o [1mAppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Randy/Documents/Scripts/RSpace    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-generated-files.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-own-target-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-all-target-headers.hmap -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-project-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Library/Frameworks/R.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources/x86_64 -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -include /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch -MMD -MT dependencies -MF /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.d --serialize-diagnostics /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.dia -c /Users/Randy/Documents/Scripts/RSpace/AppDelegate.m -o /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o36"70CEE194-AC7C-4DB0-A9D6-A87DB331717D-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o /Users/Randy/Documents/Scripts/RSpace/Engine.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s406450487.796845
+e406450487.892173
+r1
+xCompileC
+xbuild/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o
+x/Users/Randy/Documents/Scripts/RSpace/Engine.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Randy/Documents/Scripts/RSpace/Engine.m
+d/Users/Randy/Documents/Scripts/RSpace/Engine.h
+d/Library/Frameworks/R.framework/Headers/Rembedded.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Boolean.h
+d/Library/Frameworks/R.framework/Headers/Rinterface.h
+d/Library/Frameworks/R.framework/Headers/R_ext/RStartup.h
+d/Library/Frameworks/R.framework/Headers/Rinternals.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Arith.h
+d/Library/Frameworks/R.framework/Headers/R_ext/libextern.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Complex.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Error.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Memory.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Utils.h
+d/Library/Frameworks/R.framework/Headers/R_ext/Print.h
+d/Library/Frameworks/R.framework/Headers/Rconfig.h
+d/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/Randy/Documents/Scripts/RSpace/Engine.m174"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o [1mEngine.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler7423cc37f139b841^b665e437f139b841^---0#0#1#-19%DVTDocumentLocation2@53"file:///Users/Randy/Documents/Scripts/RSpace/Engine.m0000000000000000^3183"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o [1mEngine.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Randy/Documents/Scripts/RSpace    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-generated-files.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-own-target-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-all-target-headers.hmap -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-project-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Library/Frameworks/R.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources/x86_64 -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -include /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch -MMD -MT dependencies -MF /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.d --serialize-diagnostics /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.dia -c /Users/Randy/Documents/Scripts/RSpace/Engine.m -o /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o36"FBE61AD2-F1A1-4EDA-838D-7CB3F2920B0F-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o /Users/Randy/Documents/Scripts/RSpace/History.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s406450487.797365
+e406450487.851135
+r1
+xCompileC
+xbuild/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o
+x/Users/Randy/Documents/Scripts/RSpace/History.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Randy/Documents/Scripts/RSpace/History.m
+d/Users/Randy/Documents/Scripts/RSpace/History.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/Randy/Documents/Scripts/RSpace/History.m176"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o [1mHistory.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilera33fcc37f139b841^3fe4d937f139b841^---0#0#1#-19%DVTDocumentLocation2@54"file:///Users/Randy/Documents/Scripts/RSpace/History.m0000000000000000^3189"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o [1mHistory.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Randy/Documents/Scripts/RSpace    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-generated-files.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-own-target-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-all-target-headers.hmap -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-project-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Library/Frameworks/R.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources/x86_64 -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -include /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch -MMD -MT dependencies -MF /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.d --serialize-diagnostics /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.dia -c /Users/Randy/Documents/Scripts/RSpace/History.m -o /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o36"FB289DB7-AA1C-4AEC-A302-E3CF0A3FE5CB-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o /Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s406450487.796577
+e406450487.955881
+r1
+xCompileC
+xbuild/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o
+x/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m
+d/Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.h
+d/Users/Randy/Documents/Scripts/RSpace/Engine.h
+d/Users/Randy/Documents/Scripts/RSpace/History.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m206"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o [1mRSpaceWindowController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerdc0fcc37f139b841^89b5f437f139b841^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m0000000000000000^3279"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o [1mRSpaceWindowController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Randy/Documents/Scripts/RSpace    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-generated-files.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-own-target-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-all-target-headers.hmap -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-project-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Library/Frameworks/R.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources/x86_64 -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -include /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch -MMD -MT dependencies -MF /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.d --serialize-diagnostics /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.dia -c /Users/Randy/Documents/Scripts/RSpace/RSpaceWindowController.m -o /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o36"47616417-AD50-40F6-8542-BCECC0B85C5B-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileC build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o /Users/Randy/Documents/Scripts/RSpace/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s406450487.796347
+e406450487.834110
+r1
+xCompileC
+xbuild/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o
+x/Users/Randy/Documents/Scripts/RSpace/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Randy/Documents/Scripts/RSpace/main.m
+d/Users/Randy/Documents/Scripts/RSpace/Engine.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Compile /Users/Randy/Documents/Scripts/RSpace/main.m170"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o [1mmain.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler9d0ecc37f139b841^5070d537f139b841^---0#0#1#-19%DVTDocumentLocation2@51"file:///Users/Randy/Documents/Scripts/RSpace/main.m0000000000000000^3171"[1mCompileC[0m build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o [1mmain.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Randy/Documents/Scripts/RSpace    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-generated-files.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-own-target-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-all-target-headers.hmap -iquote /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-project-headers.hmap -I/Users/Randy/Documents/Scripts/RSpace/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Library/Frameworks/R.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources/x86_64 -I/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -include /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch -MMD -MT dependencies -MF /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.dia -c /Users/Randy/Documents/Scripts/RSpace/main.m -o /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o36"74483BEC-883D-44E6-8F26-3451F15B69DB-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileXIB /Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib
+s406450487.999611
+e406450488.674553
+r1
+xCompileXIB
+x/Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compiling /Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib48"[1mCompileXIB[0m [1men.lproj/MainMenu.xib[0m4b020038f139b841^18b0ac38f139b841^---0#0#1#-19%DVTDocumentLocation2@66"file:///Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib0000000000000000^519"[1mCompileXIB[0m [1men.lproj/MainMenu.xib[0m    cd /Users/Randy/Documents/Scripts/RSpace    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 10.9 --output-format human-readable-text --compile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/MainMenu.nib /Users/Randy/Documents/Scripts/RSpace/en.lproj/MainMenu.xib36"9991A154-1332-46C3-9FF2-BD0CB1342B24-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCompileXIB /Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib
+s406450488.000501
+e406450488.749857
+r1
+xCompileXIB
+x/Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compiling /Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib52"[1mCompileXIB[0m [1men.lproj/RSpaceWindow.xib[0me44b0038f139b841^e4f6bf38f139b841^---0#0#1#-19%DVTDocumentLocation2@70"file:///Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib0000000000000000^531"[1mCompileXIB[0m [1men.lproj/RSpaceWindow.xib[0m    cd /Users/Randy/Documents/Scripts/RSpace    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 10.9 --output-format human-readable-text --compile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpaceWindow.nib /Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpaceWindow.xib36"5C49CC18-F965-4E59-9FFB-6A31E606B6E5-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCopyPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite en.lproj/RSpace.scriptSuite
+s406450487.999180
+e406450488.001446
+r1
+xCopyPlistFile
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite
+xen.lproj/RSpace.scriptSuite
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection32"Copy en.lproj/RSpace.scriptSuite121"[1mCopyPlistFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite en.lproj/RSpace.scriptSuite55d9ff37f139b841^91620038f139b841^---0#0#1#-19%DVTDocumentLocation2@72"file:///Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpace.scriptSuite0000000000000000^320"[1mCopyPlistFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptSuite en.lproj/RSpace.scriptSuite    cd /Users/Randy/Documents/Scripts/RSpace    builtin-copyPlist --outdir /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj -- en.lproj/RSpace.scriptSuite36"45AFDF77-8A54-4A67-A9C3-59CE68B56EAB-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCopyPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology en.lproj/RSpace.scriptTerminology
+s406450487.999426
+e406450488.001288
+r1
+xCopyPlistFile
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology
+xen.lproj/RSpace.scriptTerminology
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Copy en.lproj/RSpace.scriptTerminology133"[1mCopyPlistFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology en.lproj/RSpace.scriptTerminology29ebff37f139b841^444d0038f139b841^---0#0#1#-19%DVTDocumentLocation2@78"file:///Users/Randy/Documents/Scripts/RSpace/en.lproj/RSpace.scriptTerminology0000000000000000^338"[1mCopyPlistFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/RSpace.scriptTerminology en.lproj/RSpace.scriptTerminology    cd /Users/Randy/Documents/Scripts/RSpace    builtin-copyPlist --outdir /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj -- en.lproj/RSpace.scriptTerminology36"15A575F4-9C96-47C3-9724-362437D81B9C-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCopyStringsFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings en.lproj/InfoPlist.strings
+s406450488.000279
+e406450488.002928
+r1
+xCopyStringsFile
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings
+xen.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection31"Copy en.lproj/InfoPlist.strings121"[1mCopyStringsFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings en.lproj/InfoPlist.strings9e440038f139b841^61c20038f139b841^---0#0#1#-19%DVTDocumentLocation2@71"file:///Users/Randy/Documents/Scripts/RSpace/en.lproj/InfoPlist.strings0000000000000000^378"[1mCopyStringsFile[0m build/Release/RSpace.app/Contents/Resources/en.lproj/InfoPlist.strings en.lproj/InfoPlist.strings    cd /Users/Randy/Documents/Scripts/RSpace    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj -- en.lproj/InfoPlist.strings36"C72E9F78-F276-421C-85A2-003126A677E0-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCpResource en.lproj/Credits.rtf build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf
+s406450488.000277
+e406450488.001991
+r1
+xCpResource
+xen.lproj/Credits.rtf
+xbuild/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Copy build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf104"[1mCpResource[0m en.lproj/Credits.rtf build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf923f0038f139b841^ff960038f139b841^---0#0#1#-19%DVTDocumentLocation2@109"file:///Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf00342400ddffdf42^538"[1mCpResource[0m en.lproj/Credits.rtf build/Release/RSpace.app/Contents/Resources/en.lproj/Credits.rtf    cd /Users/Randy/Documents/Scripts/RSpace    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/Randy/Documents/Scripts/RSpace/en.lproj/Credits.rtf /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/en.lproj36"7115CF36-79CC-47DF-A210-56154C797FB3-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CCpResource todo build/Release/RSpace.app/Contents/Resources/todo
+s406450487.999324
+e406450488.000778
+r1
+xCpResource
+xtodo
+xbuild/Release/RSpace.app/Contents/Resources/todo
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Copy build/Release/RSpace.app/Contents/Resources/todo72"[1mCpResource[0m todo build/Release/RSpace.app/Contents/Resources/todoc5e2ff37f139b841^3b340038f139b841^---0#0#1#-19%DVTDocumentLocation2@93"file:///Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources/todo00342400ddffdf42^481"[1mCpResource[0m todo build/Release/RSpace.app/Contents/Resources/todo    cd /Users/Randy/Documents/Scripts/RSpace    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/Randy/Documents/Scripts/RSpace/todo /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Resources36"6F225200-7C5D-4039-B341-2CBA731F7CF6-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CGenerateDSYMFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace
+s406450488.869992
+e406450488.886852
+r1
+xGenerateDSYMFile
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Generate /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM109"[1mGenerateDSYMFile[0m [1mbuild/Release/RSpace.app.dSYM[0m build/Release/RSpace.app/Contents/MacOS/RSpace8bc2de38f139b841^910ae338f139b841^---0#0#1#-19%DVTDocumentLocation2@74"file:///Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM00342400ddffdf42^411"[1mGenerateDSYMFile[0m [1mbuild/Release/RSpace.app.dSYM[0m build/Release/RSpace.app/Contents/MacOS/RSpace    cd /Users/Randy/Documents/Scripts/RSpace    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace -o /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app.dSYM36"C9FB299D-56CC-4E6A-836D-07BB7447471D-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CLd /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace normal x86_64
+s406450487.956910
+e406450487.998478
+r1
+xLd
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace
+xnormal
+xx86_64
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace.LinkFileList
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/main.o
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpaceWindowController.o
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/Engine.o
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/History.o
+d/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/AppDelegate.o
+d/Library/Frameworks/R.framework/R
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Link /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace71"[1mLd[0m build/Release/RSpace.app/Contents/MacOS/RSpace normal x86_642711f537f139b841^849cff37f139b841^---0#0#1#--1144"[1mLd[0m build/Release/RSpace.app/Contents/MacOS/RSpace normal x86_64    cd /Users/Randy/Documents/Scripts/RSpace    setenv MACOSX_DEPLOYMENT_TARGET 10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/Randy/Documents/Scripts/RSpace/build/Release -L/Library/Frameworks/R.framework -L/Library/Frameworks/R.framework/Versions/3.0/Resources/lib -F/Users/Randy/Documents/Scripts/RSpace/build/Release -F/Library/Frameworks -F/Users/Randy/Documents/Scripts/RSpace -filelist /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace.LinkFileList -mmacosx-version-min=10.9 -F/Library/Frameworks -framework R -fobjc-arc -fobjc-link-runtime -framework Cocoa -framework R -Xlinker -dependency_info -Xlinker /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace_dependency_info.dat -o /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/MacOS/RSpace36"5F4C0F7C-6059-4207-A676-A92530A3B81E-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CPhaseScriptExecution Run\ Script /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh
+s406450488.888180
+e406450488.924694
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'115"[1mPhaseScriptExecution[0m Run\ Script build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh460be438f139b841^24b9ec38f139b841^---0#0#1#--20913"[1mPhaseScriptExecution[0m Run\ Script build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh    cd /Users/Randy/Documents/Scripts/RSpace    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER Randy    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv ALWAYS_USE_SEPARATE_HEADERMAPS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv ARCHS_STANDARD_INCLUDING_64_BIT x86_64    setenv ASSETCATALOG_COMPILER_APPICON_NAME AppIcon    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/Randy/Documents/Scripts/RSpace/build    setenv BUILD_ROOT /Users/Randy/Documents/Scripts/RSpace/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/Randy/Documents/Scripts/RSpace/build/Release    setenv CACHE_ROOT /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CCHROOT /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_CXX_LANGUAGE_STANDARD gnu++0x    setenv CLANG_CXX_LIBRARY libc++    setenv CLANG_ENABLE_OBJC_ARC YES    setenv CLANG_WARN_BOOL_CONVERSION YES    setenv CLANG_WARN_CONSTANT_CONVERSION YES    setenv CLANG_WARN_DIRECT_OBJC_ISA_USAGE YES_ERROR    setenv CLANG_WARN_EMPTY_BODY YES    setenv CLANG_WARN_ENUM_CONVERSION YES    setenv CLANG_WARN_INT_CONVERSION YES    setenv CLANG_WARN_OBJC_ROOT_CLASS YES_ERROR    setenv CLANG_WARN__DUPLICATE_METHOD_MATCH YES    setenv CLASS_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app    setenv CODE_SIGNING_ALLOWED YES    setenv COLOR_DIAGNOSTICS YES    setenv COMBINE_HIDPI_IMAGES YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/CompositeSDKs    setenv CONFIGURATION Release    setenv CONFIGURATION_BUILD_DIR /Users/Randy/Documents/Scripts/RSpace/build/Release    setenv CONFIGURATION_TEMP_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release    setenv CONTENTS_FOLDER_PATH RSpace.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP YES    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CREATE_INFOPLIST_SECTION_IN_BINARY NO    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEFAULT_KEXT_INSTALL_PATH /Library/Extensions    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH RSpace.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/RSpace.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME RSpace.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/Randy/Documents/Scripts/RSpace/build/Release    setenv EMBEDDED_PROFILE_NAME embedded.provisionprofile    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_NS_ASSERTIONS NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH RSpace.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH RSpace.app/Contents/MacOS    setenv EXECUTABLE_NAME RSpace    setenv EXECUTABLE_PATH RSpace.app/Contents/MacOS/RSpace    setenv FILE_LIST /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH RSpace.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "/Users/Randy/Documents/Scripts/RSpace/build/Release  /Library/Frameworks /Users/Randy/Documents/Scripts/RSpace"    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME RSpace.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD gnu99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_OBJC_EXCEPTIONS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER RSpace-Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_64_TO_32_BIT_CONVERSION YES    setenv GCC_WARN_ABOUT_RETURN_TYPE YES_ERROR    setenv GCC_WARN_UNDECLARED_SELECTOR YES    setenv GCC_WARN_UNINITIALIZED_AUTOS YES    setenv GCC_WARN_UNUSED_FUNCTION YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/Randy/Documents/Scripts/RSpace/build/Release/include  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include /Library/Frameworks/R.framework/Headers /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE RSpace-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH RSpace.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH RSpace.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/RSpace.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER Randy    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/RSpace.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH RSpace.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DEPENDENCY_INFO_FILE /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace_dependency_info.dat    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/RSpace-LinkMap-normal-x86_64.txt    setenv LD_NO_PIE NO    setenv LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER YES    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_KEXT_INSTALL_PATH /Library/Extensions    setenv LIBRARY_SEARCH_PATHS "/Users/Randy/Documents/Scripts/RSpace/build/Release  /Library/Frameworks/R.framework /Library/Frameworks/R.framework/Versions/3.0/Resources/lib"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal/x86_64/RSpace.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH RSpace.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.9    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 13A603    setenv MAC_OS_X_VERSION_ACTUAL 1090    setenv MAC_OS_X_VERSION_MAJOR 1090    setenv MAC_OS_X_VERSION_MINOR 0900    setenv MODULE_CACHE_DIR /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/ModuleCache    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Objects-normal    setenv OBJROOT /Users/Randy/Documents/Scripts/RSpace/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-F/Library/Frameworks -framework R"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/local/cuda/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH RSpace.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/PkgInfo    setenv PKGINFO_PATH RSpace.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform    setenv PLATFORM_NAME macosx    setenv PLATFORM_PREFERRED_ARCH x86_64    setenv PLATFORM_PRODUCT_BUILD_VERSION 5A3005    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH RSpace.app/Contents/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH RSpace.app/Contents/PrivateHeaders    setenv PRODUCT_NAME RSpace    setenv PRODUCT_SETTINGS_PATH /Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT RSpace    setenv PROJECT_DERIVED_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/DerivedSources    setenv PROJECT_DIR /Users/Randy/Documents/Scripts/RSpace    setenv PROJECT_FILE_PATH /Users/Randy/Documents/Scripts/RSpace/RSpace.xcodeproj    setenv PROJECT_NAME RSpace    setenv PROJECT_TEMP_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build    setenv PROJECT_TEMP_ROOT /Users/Randy/Documents/Scripts/RSpace/build    setenv PUBLIC_HEADERS_FOLDER_PATH RSpace.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "/Users/Randy/Documents/Scripts/RSpace/build/Release "    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH RSpace.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk    setenv SDK_NAME macosx10.9    setenv SDK_PRODUCT_BUILD_VERSION 13A595    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/Release/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH RSpace.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH RSpace.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/Randy/Documents/Scripts/RSpace    setenv SRCROOT /Users/Randy/Documents/Scripts/RSpace    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_PLATFORMS macosx    setenv SYMROOT /Users/Randy/Documents/Scripts/RSpace/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_KEXT_INSTALL_PATH /System/Library/Extensions    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME RSpace    setenv TARGET_BUILD_DIR /Users/Randy/Documents/Scripts/RSpace/build/Release    setenv TARGET_NAME RSpace    setenv TARGET_TEMP_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build    setenv TEMP_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build    setenv TEMP_FILES_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build    setenv TEMP_FILE_DIR /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build    setenv TEMP_ROOT /Users/Randy/Documents/Scripts/RSpace/build    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 502    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH RSpace.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER Randy    setenv USER_APPS_DIR /Users/Randy/Applications    setenv USER_LIBRARY_DIR /Users/Randy/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH RSpace.app/Contents/version.plist    setenv VERSION_INFO_BUILDER Randy    setenv VERSION_INFO_FILE RSpace_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:RSpace  PROJECT:RSpace-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME RSpace.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 5A3005    setenv XCODE_VERSION_ACTUAL 0502    setenv XCODE_VERSION_MAJOR 0500    setenv XCODE_VERSION_MINOR 0500    setenv XPCSERVICES_FOLDER_PATH RSpace.app/Contents/XPCServices    setenv YACC yacc    setenv arch x86_64    setenv diagnostic_message_length 80    setenv variant normal    /bin/sh -c /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/Script-25289F24182DC88500DB2294.sh36"49AFF3B6-E27F-4EAE-B5EF-E58B4A5EC37B-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CProcessInfoPlistFile /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Info.plist /Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist
+s406450488.868034
+e406450488.869536
+r1
+xProcessInfoPlistFile
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Info.plist
+x/Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Process /Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist99"[1mProcessInfoPlistFile[0m build/Release/RSpace.app/Contents/Info.plist [1mRSpace-Info.plist[0m3946de38f139b841^b39ade38f139b841^---0#0#1#-19%DVTDocumentLocation2@62"file:///Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist0000000000000000^581"[1mProcessInfoPlistFile[0m build/Release/RSpace.app/Contents/Info.plist [1mRSpace-Info.plist[0m    cd /Users/Randy/Documents/Scripts/RSpace    builtin-infoPlistUtility /Users/Randy/Documents/Scripts/RSpace/RSpace-Info.plist -genpkginfo /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/PkgInfo -expandbuildsettings -platform macosx -additionalcontentfile /Users/Randy/Documents/Scripts/RSpace/build/RSpace.build/Release/RSpace.build/assetcatalog_generated_info.plist -o /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app/Contents/Info.plist36"2DD00C1E-1AF7-4942-AA8F-287DDAEA3E16-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+
+CProcessPCH /var/folders/w9/7w10svxj5093z4831n7m27w00000gp/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/RSpace-Prefix-fqpcoxyfnnydpscdgagashibgtln/RSpace-Prefix.pch.pch RSpace-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CTouch /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app
+s406450488.925418
+e406450488.931284
+r1
+xTouch
+x/Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Touch /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app38"[1mTouch[0m build/Release/RSpace.appb6f8ec38f139b841^db6aee38f139b841^---0#0#1#--169"[1mTouch[0m build/Release/RSpace.app    cd /Users/Randy/Documents/Scripts/RSpace    /usr/bin/touch -c /Users/Randy/Documents/Scripts/RSpace/build/Release/RSpace.app36"5C0D63BB-5D1C-4662-BCD8-B12936412ED8-
+bDF386221-0955-4A9B-8463-28C03E0DAB61
+

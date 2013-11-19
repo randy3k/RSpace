@@ -17,11 +17,10 @@
 
 - (void) writePipe: (NSString*) str;
 
-- (void) waitToRead;
-
 - (void) activate;
 
 - (void) run_repl;
 
+- (void) interrupt;
 
 @end

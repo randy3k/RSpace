@@ -26,7 +26,9 @@
 }
 
 - (void) add:(NSString *)str{
-    [history addObject:str];
+    if ([history count]==0 || ![[history lastObject] isEqualToString:str])
+        if (str && [str length]>0)
+            [history addObject:str];
     current = [history count];
 }
 

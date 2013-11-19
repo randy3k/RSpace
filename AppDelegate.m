@@ -9,20 +9,23 @@
 #import "AppDelegate.h"
 #import "RSpaceWindowController.h"
 
+@implementation NSApplication (ScriptingSupport)
+- (id)handleDCMDCommand:(NSScriptCommand*)command
+{
+    NSDictionary *args = [command evaluatedArguments];
+    NSString *cmd = [args objectForKey:@""];
+    if (!cmd || [cmd isEqualToString:@""])
+        return [NSNumber numberWithBool:NO];
+	[[RSpaceWindowController wc] consoleInput: cmd];
+    [[RSpaceWindowController wc] showWindow:nil];
+    [[RSpaceWindowController wc].window makeKeyAndOrderFront:self];
+	return [NSNumber numberWithBool:YES];
+}
+@end
 
 @implementation AppDelegate{
      RSpaceWindowController*  wc;
 }
-
--(id) init
-{
-    self = [super init];
-
-
-
-    return self;
-}
-
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;

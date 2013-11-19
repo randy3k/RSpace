@@ -12,17 +12,18 @@
 #include <Rembedded.h>
 #include <Rinterface.h>
 #include "RSpaceWindowController.h"
+//#include <R_ext/eventloop.h>
+
 
 static Engine* R = nil;
-
 char* commandBuffer=0;
+extern int R_interrupts_pending;
 
 int R_ReadConsole(const char *prompt, unsigned char *buf, int len, int addtohistory){
+    R_interrupts_pending=0;
     NSLog(@"Start readconsole");
     char *c;
     int skipPC=0;
-    
-    [R waitToRead];
     
     [[R wc] performSelectorOnMainThread:@selector(writePrompt:) withObject:[NSString stringWithUTF8String: (char*) prompt] waitUntilDone:YES];
     
@@ -65,16 +66,36 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 	}
 }
 
+//static long lastPolledEvents=0;
+//#include <sys/time.h>
+//
+//static void PolledEvents(void){
+//	struct timeval rv;
+//	if (!gettimeofday(&rv,0)) {
+//		long curTime = (rv.tv_usec/1000)+(rv.tv_sec&0x1fffff)*1000;
+//		if (curTime - lastPolledEvents < 100) return;
+//	}
+//    
+//    if (!gettimeofday(&rv,0))
+//		lastPolledEvents = (rv.tv_usec/1000)+(rv.tv_sec&0x1fffff)*1000;
+//}
+
+
 @implementation Engine{
     NSPipe* pipeHandle;
     NSFileHandle* pipeReadHandle;
     NSFileHandle* pipeWriteHandle;
-    NSCondition* condition;
-    unsigned long buflen;
 }
 
 @synthesize wc;
-         
+
++ (Engine*) R
+{
+    if (R==nil)
+        R=[[Engine alloc] init];
+    return R;
+}
+
 - (id) init{
     self = [super init];
 
@@ -84,9 +105,6 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(handlePipe:) name: NSFileHandleReadCompletionNotification object: pipeReadHandle] ;
     [pipeReadHandle readInBackgroundAndNotify] ;
 
-    condition = [[NSCondition alloc] init];
-    
-    buflen = 0;
     
     return self;
 }
@@ -95,7 +113,7 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
     // for gaining speed, use buffer to write text
     [pipeWriteHandle writeData: [str dataUsingEncoding:NSUTF8StringEncoding]];
     // for synchronization and locking
-    buflen += [str length];
+
 }
 
 - (void) handlePipe: notification{
@@ -106,30 +124,6 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 
     // perform on mainthread for thread safty
     [[R wc] performSelectorOnMainThread:@selector(writeText:) withObject:str waitUntilDone:YES];
-
-    buflen -= [str length];
-    NSLog(@"buflen = %lu", buflen);
-    if (buflen==0){
-        [condition lock];
-        [condition signal];
-        [condition unlock];
-    }
-}
-
-- (void) waitToRead{
-    
-    if (buflen >0){
-        [condition lock];
-        [condition wait];
-        [condition unlock];
-    }
-}
-
-+ (Engine*) R
-{
-    if (R==nil)
-        R=[[Engine alloc] init];
-    return R;
 }
 
 - (void) activate
@@ -149,14 +143,15 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
 
     Rf_initEmbeddedR(argc, args);
 
-
+    R_SignalHandlers = 0;
     R_Outputfile = NULL;
     R_Consolefile = NULL;
     R_Interactive = 1;
     ptr_R_ReadConsole =  R_ReadConsole;
     ptr_R_WriteConsole = NULL;
     ptr_R_WriteConsoleEx = R_WriteConsoleEx;
-
+//    R_PolledEvents = PolledEvents;
+    
     // disable stack limit checking
     R_CStackLimit = -1;
     
@@ -176,6 +171,11 @@ void R_WriteConsoleEx(const char *buf, int len, int oType){
     NSLog(@"Finished");
 }
 
-
+- (void) interrupt{
+    R_interrupts_pending = 1;
+//    pid_t  pid = fork();
+//    NSLog(@"%d", pid);
+    
+}
 
 @end
